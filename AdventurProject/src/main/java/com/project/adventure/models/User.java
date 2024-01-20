@@ -29,15 +29,10 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty(message="First name is required!")
-	@Size(min=3, message="First name must be at least 3 characters!")
-	@Pattern(regexp="^[A-Za-z\s]*$",message = "First name must be only letters!")
-	private String firstName;
-	
-	@NotEmpty(message="Last name is required!")
-	@Size(min=3, message="Last name must be at least 3 characters!")
-	@Pattern(regexp="^[A-Za-z\s]*$",message = "Last name must be only letters!")
-	private String lastName;
+	@NotEmpty(message="User name is required!")
+	@Size(min=3, message="User name must be at least 3 characters!")
+	@Pattern(regexp="^[A-Za-z\s]*$",message = "User name must be only letters!")
+	private String userName;
 	
 	@NotEmpty(message="Email is required!")
 	@Email(message="Please enter a valid email!")
@@ -72,17 +67,13 @@ public class User {
 	 
 	public User() {}
 	
-	
-	
 	public User(
-			@NotEmpty(message = "First name is required!") @Size(min = 3, message = "First name must be at least 3 characters!") @Pattern(regexp = "^[A-Za-z ]*$", message = "First name must be only letters!") String firstName,
-			@NotEmpty(message = "Last name is required!") @Size(min = 3, message = "Last name must be at least 3 characters!") @Pattern(regexp = "^[A-Za-z ]*$", message = "Last name must be only letters!") String lastName,
+			@NotEmpty(message = "User name is required!") @Size(min = 3, message = "User name must be at least 3 characters!") @Pattern(regexp = "^[A-Za-z ]*$", message = "User name must be only letters!") String userName,
 			@NotEmpty(message = "Email is required!") @Email(message = "Please enter a valid email!") String email,
 			@NotEmpty(message = "Password is required!") @Size(min = 8, message = "Password must be at least 8 characters!") String password,
 			List<Plan> plans) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.userName = userName;
 		this.email = email;
 		this.password = password;
 		this.plans = plans;
@@ -93,17 +84,11 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getUserName() {
+		return userName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getEmail() {
 		return email;
@@ -141,6 +126,7 @@ public class User {
 	public void setPlans(List<Plan> plans) {
 		this.plans = plans;
 	}
+	
 	
 	
 }
