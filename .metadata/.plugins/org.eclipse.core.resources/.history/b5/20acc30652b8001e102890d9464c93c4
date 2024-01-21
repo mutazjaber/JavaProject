@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+*{
+    font-family: 'Fira Mono', monospace;
+}
+.btn-fancy {
+    background-color: #5a5a5a;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.btn-fancy:hover {
+    background-color: #5a5a5a;
+}
+.search-bar {
+border: none;
+border-radius: 20px;
+padding: 5px 10px;
+}
+.search-bar input {
+border: none;
+color: #fff;
+}
+.search-bar button {
+
+border: none;
+border-radius: 20px;
+margin-left: 5px;
+transition: background-color 0.3s ease;
+}
+.search-bar button:hover {
+background-color: #5a5a5a;
+}
+.carousel-inner img {
+max-height: 400px;
+width: auto;
+}
+.btn-fancy {
+background-color: #5a5a5a;
+color: #fff;
+transition: background-color 0.3s ease;
+}
+.btn-fancy:hover {
+background-color: #5a5a5a;
+}
