@@ -5,12 +5,11 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.project.adventure.models.User;
+import com.project.adventure.models.Role;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long>{
+public interface RoleRepository extends CrudRepository<Role, Long> {
 	
-	List<User> findAll();
-	
-	User findByUsername(String username);
+	List<Role> findAll();
+	List<Role> findByName(String name);
 }
