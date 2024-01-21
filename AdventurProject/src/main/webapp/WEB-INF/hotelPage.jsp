@@ -4,16 +4,19 @@
 <!-- form:form -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
-<%@ page isErrorPage="true" %>        
+<%@ page isErrorPage="true" %> 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Admin Page</title>
+		<title>New Hotel</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@650&display=swap" rel="stylesheet">
 		<style>
+		*{
+			font-family: 'Fira Mono', monospace;
+		}
         .btn-fancy {
             background-color: #5a5a5a;
             color: #fff;
@@ -135,28 +138,53 @@
 </ul>
         </div>
     </nav>
-
-		
-		<div class="container mt-5">
-	    	<form:form action="/destinations/new" method="post" modelAttribute="destination">
-	
+    <div class="container mt-5 d-flex justify-content-between">
+    <div class="container border p-4" style="background-color: #e3f2fd;">
+			<h1>Create Hotel</h1>
+	    	<form:form action="/hotels/new" method="post" modelAttribute="hotel">
+				<form:errors path="hotel.*" class="text-danger"/>
 		        <!-- Example Input Field -->
-		        <div class="form-group">
-		            <form:label for="destinationName" path="destinationName">Destination Name:</form:label>
-		            <form:input type="text" class="form-control" id="destinationName" path="destinationName" />
+		         <div class="form-group mt-3">
+		             <form:label path="destination">Destination:</form:label>
+		             <form:select path="destination" class="form-control">
+				        <c:forEach var="oneDestination" items="${destinations}">
+				            <!--- Each option VALUE is the id of the person --->
+					            <form:option value="${oneDestination.id}" path="destination">
+				            <!--- This is what shows to the user as the option --->
+				                <c:out value="${oneDestination.destinationName}"/>
+				            </form:option>
+				        </c:forEach>
+	    			</form:select>
 		        </div>
-		        <div class="form-group">
-		            <form:label for="image" path="image">Destination Image:</form:label>
+		        <div class="form-group mt-3">
+		            <form:label for="hotelName" path="hotelName">Hotel Name:</form:label>
+		            <form:errors path="hotelName" class="text-danger"/>
+		            <form:input type="text" class="form-control" id="hotelName" path="hotelName" />
+		        </div>
+		        <div class="form-group mt-3">
+		            <form:label for="image" path="image">Hotel Image:</form:label>
+		            <form:errors path="image" class="text-danger"/>
 		            <form:input type="text" class="form-control" id="image" path="image" />
 		        </div>
-				<div class="form-group">
-		            <form:label for="description" path="description">Destination Description:</form:label>
+		        <div class="form-group mt-3">
+		            <form:label for="price" path="price">Hotel Night Price:</form:label>
+		            <form:errors path="price" class="text-danger"/>
+		            <form:input type="text" class="form-control" id="price" path="price" />
+		        </div>
+				<div class="form-group mt-3">
+		            <form:label for="description" path="description">Hotel Description:</form:label>
+		            <form:errors path="description" class="text-danger"/>
 		            <form:textarea class="form-control" id="description" path="description" />
 		        </div>
 		        <!-- Add more input fields as needed -->
 		
-		        <button type="submit" class="btn btn-primary">Create</button>
+		        <button type="submit" class="btn btn-primary mt-3">Create Hotel</button>
 	    	</form:form>
+		</div>
+		
+		<div class="container">
+    			<img class="w-100 h-100" src="https://th.bing.com/th/id/R.d26d8d0f04c951bdefa5bc719339bc19?rik=6U9%2f0QPhOX0ZPA&riu=http%3a%2f%2fwww.indiaprofile.com%2fblog%2fwp-content%2fuploads%2f2014%2f03%2fThe-Radisson-Hotel-New-Delhi.jpg&ehk=AJwzouvuUT4y97XqddXcGmKZMsToAr1C79aqMay5XTg%3d&risl=&pid=ImgRaw&r=0" alt="Sea Image"  />
+    		</div>
 		</div>
 		
 		 <!-- Footer Section -->
