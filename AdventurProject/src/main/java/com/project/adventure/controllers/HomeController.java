@@ -26,6 +26,10 @@ public class HomeController {
     public String userPlanPage() {
         return "userPlans.jsp";
     }  
+	@RequestMapping("/about")
+    public String aboutUs() {
+        return "about.jsp";
+    } 
 	
 	
 	

@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/about">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
                                     <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
                                 </svg> 
@@ -79,7 +79,7 @@
             </div>
             <div class="d-flex mx-auto">
                 <form class="search-bar d-flex mx-auto">
-                    <input class="form-control " type="search" placeholder="Explore (o.o) " aria-label="Search">
+                    <input class="form-control border border-info" type="search" placeholder="Explore (o.o) " aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
                         class="bi bi-search" viewBox="0 0 16 16">
@@ -108,7 +108,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://cdn.discordapp.com/attachments/1197447314848100362/1198279324382539786/wallpaperflare.com_wallpaper_3.jpg?ex=65be5395&is=65abde95&hm=9b739f9b0e2644049d395ff486c3014d6b1518945977eea3eb1c4e651b14a827&/800/400"
-                        class="d-block w-100 img-fluid rounded-pill " alt="Slide 1">
+                        class="d-block w-100 img-fluid  " alt="Slide 1">
                     <div class="carousel-caption d-none d-md-block" style="color: black; text-shadow: 2px 2px #ffffff">
                         <button class="btn btn-fancy " type="button">Find a Destination
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -123,7 +123,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100 rounded-pill" alt="Slide 2">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100 " alt="Slide 2">
                     <div class="carousel-caption d-none d-md-block " style="color: rgb(255, 255, 255); text-shadow: 2px 2px #000000">
                         <button class="btn btn-fancy" type="button">Find a Destination
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -137,7 +137,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://wallpapers.com/images/hd/free-travel-wallpaper-background-nyis8xlyhu00y5ym.webp" class="d-block w-100 rounded-pill " alt="Slide 3">
+                    <img src="https://wallpapers.com/images/hd/free-travel-wallpaper-background-nyis8xlyhu00y5ym.webp" class="d-block w-100  " alt="Slide 3">
                     <div class="carousel-caption d-none d-md-block " style="color: black; text-shadow: 2px 2px #ffffff">
                         <button class="btn btn-fancy" type="button">Find a Destination
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -202,21 +202,7 @@
         </div>
     </div>
     
-        <!-- <div class="col-md-8">
-            <div class="jumbotron">
-                <h1 class="display-4">Welcome to Your Website</h1>
-                <p class="lead">Every year, we award travelers’ favorite destinations, hotels, restaurants, and things to do around the world, 
-                    based on reviews and ratings collected over the past 12 months. So our Travelers’ 
-                    Choice Awards Best of the Best winners are decided by you: real travelers from all over, sharing real opinions and stories.
-
-                    The 2024 winners are a celebration of everything we did last year—all the places we discovered and all the times we just said 
-                    “yes” to new adventures. We'll reveal the winners by category throughout the year, so keep checking back for the latest.</p>
-                <hr class="my-4">
-                <p>Add a call-to-action here. Encourage users to take some action.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
-            </div>
-        </div>
-    </div> -->
+ 
     <!-- https://static.tacdn.com/img2/tc/hero/hotels_hero_2023-c1.png -->
     <div class="container mt-5">
     <hr class="featurette-divider">
@@ -224,10 +210,10 @@
     <div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
       <div class="col-md-7">
         <h2 class="featurette-heading">Top Hotels <span class="text-muted"> - World  </span></h2>
-        <p class="lead">
+        <p class="card-text">
 
-            We award Travelers’ Choice Best of the Best to hotels with a high volume of above-and-beyond reviews and opinions from our community over a 12-month period. Each winner has passed our rigorous trust and safety standards. 
-            Fewer than 1% of Tripadvisor’s 8 million listings are awarded Best of the Best, signifying the highest 
+            We award Travelers Choice Best of the Best to hotels with a high volume of above-and-beyond reviews and opinions from our community over a 12-month period. Each winner has passed our rigorous trust and safety standards. 
+            Fewer than 1% of Tripadvisors 8 million listings are awarded Best of the Best, signifying the highest 
             level of excellence in hospitality.
       </div>
       <div class="col-md-5 ">
@@ -242,8 +228,8 @@
     <div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Fine Dining <span class="text-muted">- World</span></h2>
-        <p class="lead"> 
-            We award Travelers’ Choice Best of the Best to restaurants with a high volume of above-and-beyond 
+        <p class="card-text"> 
+            We award Travelers Choice Best of the Best to restaurants with a high volume of above-and-beyond 
             reviews and opinions from our community over a 12-month period. Each winner has passed our rigorous 
             trust and safety standards. Fewer than 1% of Tripadvisor’s 8 million listings are 
             awarded Best of the Best, signifying the highest level of excellence in travel.</p>
@@ -260,7 +246,7 @@
     <div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
       <div class="col-md-7">
         <h2 class="featurette-heading">Top things to do  <span class="text-muted">and attractions</span></h2>
-        <p class="lead">Explore the best things to do around the world on Tripadvisor to get recommendations and read reviews from those who have been there before. From family-friendly activities and adventure excursions to city tours, museums and iconic attractions, 
+        <p class="card-text">Explore the best things to do around the world on Tripadvisor to get recommendations and read reviews from those who have been there before. From family-friendly activities and adventure excursions to city tours, museums and iconic attractions, 
             discover amazing experiences near and far to start planning your next trip.</p>
       </div>
       <div class="col-md-5">
@@ -277,12 +263,12 @@
 
 
     <!-- Footer Section -->
-    <footer class="bg-light text-center text-lg-start mt-5 ">
+    <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-xl navbar-light py-1" style="background-color: #e3f2fd;">
-                        <div class="container-fluid ">
+                      <div class="container-fluid ">
                             <div class="collapse navbar-collapse show d-flex justify-content-around"
                                 id="navbarLight">
                                 <ul class="navbar-nav">
@@ -306,7 +292,7 @@
                                         </svg> Places</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <a class="nav-link" href="/about"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
                                             <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
                                         </svg> Contact Us</a>
                                     </li>
@@ -314,6 +300,18 @@
                             </div>
                         </div>
                     </nav>
+                    <div class="col-md-8 mx-auto">
+                        <div class="jumbotron text-center">
+                         <a href="#" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M12.001 2.061C6.478 2.061 2 6.537 2 12.061c0 4.993 3.661 9.132 8.445 9.879v-6.99H7.89v-2.889h2.556l.001-2.203c0-2.506 1.484-3.896 3.769-3.896 1.095 0 2.23.21 2.23.21v2.445h-1.253c-1.242 0-1.639.777-1.639 1.568l.003 1.876h2.777l-.444 2.889h-2.333v6.99C18.34 21.192 22 17.054 22 12.061c0-5.524-4.477-10-9.999-10z"></path></svg></a>
+                    <a href="#" rel="noopener" class="HqkqA Cl _F bYExr" title="Twitter" aria-label="Twitter"><svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M2 18.1c2.2.2 4.3-.5 5.9-1.899-1.2-.101-3.6-2.4-4-2.9h1.6c-1.9-.5-3.2-2.2-3.2-4.1.6.099 1.2.299 1.7.499h.2C2.7 8.3 2.2 6 3.1 4.1c2.1 2.6 5.3 4.2 8.6 4.4V7.4c.1-2.2 2-4 4.2-4 .9 0 1.7.3 2.4.8.4.3.8.3 1.2.2l1.9-.7c-.4.9-.9 1.6-1.6 2.3.601-.1 1.3-.4 1.9-.5l.3.2c-.6.5-1.2 1.1-1.7 1.5-.1.3-.2.7-.2 1.1 0 1.9-.5 3.8-1.3 5.601A11.982 11.982 0 019.5 20.1c-2.4.2-4.9-.199-7-1.3l-.5-.7"></path></svg></a>
+                    <a href="#" rel="noopener" class="HqkqA Cl _F bYExr" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M21.938 7.9c0-.8-.199-1.6-.5-2.4-.5-1.4-1.5-2.5-2.9-3-.799-.3-1.6-.4-2.4-.5h-4.099c-1.4 0-2.8 0-4.2.1-.8 0-1.6.2-2.3.5-1.3.5-2.4 1.5-2.9 2.8-.3.8-.5 1.6-.5 2.5 0 1.1-.1 1.4-.1 4.1-.1 1.4-.1 2.7 0 4.1 0 .801.2 1.601.5 2.4.5 1.3 1.6 2.4 2.9 2.9.8.3 1.6.399 2.4.5 1.4.1 2.8.1 4.2.1s2.8 0 4.099-.1c.801 0 1.602-.2 2.4-.5a5.17 5.17 0 002.9-2.9c.301-.8.398-1.6.5-2.4 0-1.1.1-1.399.1-4.1s-.1-3.1-.1-4.1zM20.137 16c0 .6-.1 1.3-.299 1.9-.301.898-1 1.6-1.9 1.898-.6.201-1.301.301-1.9.301-1.1 0-1.4.102-4 .102-1.3 0-2.7 0-4-.102-.6 0-1.2-.1-1.9-.3-.9-.3-1.6-1-1.9-1.899-.3-.601-.4-1.2-.4-1.9 0-1.1-.1-1.4-.1-4 0-1.3 0-2.7.1-4 .1-.6.2-1.3.3-1.9.3-.9 1-1.6 1.9-1.9.7-.2 1.3-.3 2-.3 1.1 0 1.4-.1 4-.1 1.3 0 2.701 0 4 .1.6 0 1.301.1 1.9.3.898.3 1.6 1 1.898 1.9.201.6.301 1.3.301 1.9 0 1.1.102 1.4.102 4-.001 2.6-.102 3-.102 4z"></path><path d="M12.138 6.9c-2.9 0-5.1 2.3-5.1 5.1s2.3 5.1 5.1 5.1 5.101-2.3 5.101-5.1-2.301-5.1-5.101-5.1zm0 8.4c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3c1.8 0 3.2 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3zM17.438 5.5c-.699 0-1.199.5-1.199 1.2s.5 1.2 1.199 1.2 1.199-.5 1.199-1.2-.5-1.2-1.199-1.2z"></path></svg></a>
+                    
+                            <p class="card-text">Discover new content by category throughout the year, so keep checking back for the latest.</p>
+                            <hr class="my-4">
+                            <p>call-to-action here. it's our pleasure to help.</p>
+                            
+                        </div>
+                    </div>
                     <div class="d-flex justify-content-center align-items-center mt-3">
                         <a class="navbar-brand" href="#">
                             <img src="https://media.discordapp.net/attachments/1197447314848100362/1197467387360989254/adventurLogo.jpg?ex=65bb5f69&is=65a8ea69&hm=37dd6bb12ee3faf35ce8058f47d3bbe1a1fb3b15b77a53188f04d7b8c393bf20&=&format=webp&width=1062&height=662"
