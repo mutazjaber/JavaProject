@@ -18,6 +18,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -36,7 +37,7 @@ public class Restaurant {
 	@Size(min=3, message="Restaurant image must be at least 3 characters!")
 	private String image;
 	
-	@NotEmpty(message="Price is required!")
+	@NotNull(message="Price is required!")
 	private double price;
 	
 	@NotEmpty(message="Restaurant description is required!")
@@ -71,7 +72,7 @@ public class Restaurant {
 	public Restaurant(
 			@NotEmpty(message = "Restaurant name is required!") @Size(min = 3, message = "Restaurant name must be at least 3 characters!") String restaurantName,
 			@NotEmpty(message = "Restaurant image is required!") @Size(min = 3, message = "Restaurant image must be at least 3 characters!") String image,
-			@NotEmpty(message = "Price is required!") double price,
+			@NotNull(message = "Price is required!") double price,
 			@NotEmpty(message = "Restaurant description is required!") @Size(min = 5, message = "Restaurant description must be at least 5 characters!") String description,
 			Destination destination, Plan plan) {
 		super();

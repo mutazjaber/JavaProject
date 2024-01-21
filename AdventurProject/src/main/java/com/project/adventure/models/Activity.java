@@ -18,6 +18,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -32,7 +33,7 @@ public class Activity {
 	@Size(min=3, message="Activity name must be at least 3 characters!")
 	private String activityName;
 	
-	@NotEmpty(message="Price is required!")
+	@NotNull(message="Price is required!")
 	private double price;
 	
 	@NotEmpty(message="Activity description is required!")
@@ -66,7 +67,7 @@ public class Activity {
 	
 	public Activity(
 			@NotEmpty(message = "Activity name is required!") @Size(min = 3, message = "Activity name must be at least 3 characters!") String activityName,
-			@NotEmpty(message = "Price is required!") double price,
+			@NotNull(message = "Price is required!") double price,
 			@NotEmpty(message = "Activity description is required!") @Size(min = 5, message = "Activity description must be at least 5 characters!") String description,
 			Destination destination, Plan plan) {
 		super();
