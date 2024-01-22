@@ -62,3 +62,46 @@
 .card {
 	transition: all 0.3s ease-in-out;
 }
+
+.view-image {
+	  border-radius: 8px;
+	}
+	/* Container styles */
+    .image-container {
+      position: relative;
+      width: 98%; /* Set a width for the container */
+      margin: 0 auto;
+      height: 50%;
+    }
+
+    /* Image styles */
+    .image-container img {
+      width: 100%; /* Make the image fill the container */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Remove extra spacing below the image */
+      height: 50%;
+    }
+
+    /* Text overlay styles */
+    .image-text {
+      position: absolute;
+      top: 80%; /* Center the text vertically */
+      left: 50%; /* Center the text horizontally */
+      transform: translate(-50%, -50%); /* Center the text precisely */
+      color: #fff; /* Text color */
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a subtle text shadow */
+    }
+    .name-text {
+      position: absolute;
+      top: 10%; /* Center the text vertically */
+      left: 50%; /* Center the text horizontally */
+      transform: translate(-50%, -50%); /* Center the text precisely */
+      color: #fff; /* Text color */
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a subtle text shadow */
+    }

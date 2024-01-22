@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-            <%@ page isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Adventure Home Page</title>
     <link rel='stylesheet' href='/css/home.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/css/styles.css' type='text/css' media='all' />
 
 
 </head>
@@ -26,10 +27,10 @@
     <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5  rounded" style="background-color: #e3f2fd;">
         <div class="container-fluid">
 
-            <a class="navbar-brand " href="/plan">
+            <a class="navbar-brand " href="/">
                 <img src="https://media.discordapp.net/attachments/1197447314848100362/1197467387360989254/adventurLogo.jpg?ex=65bb5f69&is=65a8ea69&hm=37dd6bb12ee3faf35ce8058f47d3bbe1a1fb3b15b77a53188f04d7b8c393bf20&=&format=webp&width=1062&height=662"
                     alt="" width="60" height="35" class="d-inline-block align-text-top">
-                Adventure Planer
+                Adventure Planner
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLight" aria-controls="navbarLight" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,7 +49,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/plan">
+                            <a class="nav-link" href="/userPlans">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
                                     <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
                                     <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
@@ -93,12 +94,24 @@
 
             <ul class="navbar-nav">
     <li class="nav-link">
+    <c:if test="${userId == null}">
     <a class="btn btn-fancy"  href="/login">Sign In <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
             <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
           </svg></a>
-          				<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
-			
+     </c:if> 
+     <c:if test="${userId != null}">
+    <a class="btn btn-fancy"  href="/logout">Sign Out <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+          </svg></a>
+     </c:if> 
+     <c:if test="${userId == 1}">  
+     	<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
+     </c:if>
+     <c:if test="${userId != 1}">  
+     	<li class="nav-link">Welcome, <c:out value="${thisUser.username}" /></li>
+     </c:if>  				
         
     </li>
 </ul>
@@ -177,10 +190,10 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100 card-hover">
                     <img src="https://media.discordapp.net/attachments/1197447314848100362/1198249797216370748/293782-3840x2160-desktop-4k-paris-background-image.jpg?ex=65be3816&is=65abc316&hm=69cab4e0139548302254aa1053ffefb0578f407d47caaf21514947b342e14569&=&format=webp&width=1177&height=662" 
-                        class="card-img-top" alt="Card Image">
+                        class="card-img-top" alt="Card Image" style="height:40%;">
                     <div class="card-body">
-                        <h5 class="card-title">Paris</h5>
-                        <p class="card-text">Paris' monument-lined boulevards, museums, classical bistros and boutiques are enhanced by a new wave of multimedia galleries, creative wine bars, design shops and tech start-ups.</p>
+                        <h5 class="card-title text-center">Paris</h5>
+                        <p class="card-text" style="text-align: justify;">Paris' monument-lined boulevards, museums, classical bistros and boutiques are enhanced by a new wave of multimedia galleries, creative wine bars, design shops and tech start-ups.</p>
                         <a href="#" class="btn btn-fancy">Read More</a>
                     </div>
                 </div>
@@ -188,20 +201,20 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100 card-hover">
                     <img src="https://media.cntraveller.com/photos/63f37018ea053d878b345cb2/16:9/w_1920%2Cc_limit/London-GettyImages-585295947.jpeg" 
-                        class="card-img-top" alt="Card Image">
+                        class="card-img-top" alt="Card Image" style="height:40%;">
                     <div class="card-body">
-                        <h5 class="card-title" >London</h5>
-                        <p class="card-text">Instantly recognizable icons like Big Ben and St. Paul's Cathedral welcome you to history-laden London, the UK's multicultural capital that's a tireless innovator of art and culture.</p>
+                        <h5 class="card-title text-center" >London</h5>
+                        <p class="card-text" style="text-align: justify;">Instantly recognizable icons like Big Ben and St. Paul's Cathedral welcome you to history-laden London, the UK's multicultural capital that's a tireless innovator of art and culture.</p>
                         <a href="#" class="btn btn-fancy">Read More</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card h-100 card-hover">
-                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/2a/34/2d/28/caption.jpg" class="card-img-top" alt="Card Image">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/2a/34/2d/28/caption.jpg" class="card-img-top" alt="Card Image" style="height:40%;">
                     <div class="card-body">
-                        <h5 class="card-title" style="color: black; text-shadow: 2px 2px #ffffff">Las Vegas</h5>
-                        <p class="card-text">Find insider info on shows and events, hotels and casinos, food and drink options, and things to do. Let us help you plan the perfect Las Vegas adventure.</p>
+                        <h5 class="card-title text-center" style="color: black; text-shadow: 2px 2px #ffffff">Las Vegas</h5>
+                        <p class="card-text" style="text-align: justify;">Find insider info on shows and events, hotels and casinos, food and drink options, and things to do. Let us help you plan the perfect Las Vegas adventure.</p>
                         <a href="#" class="btn btn-fancy">Read More</a>
                     </div>
                 </div>
@@ -287,7 +300,7 @@
                                             </svg> Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/plan"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                                        <a class="nav-link" href="/userPlans"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
                                             <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
                                             <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
                                         </svg>  Services</a>

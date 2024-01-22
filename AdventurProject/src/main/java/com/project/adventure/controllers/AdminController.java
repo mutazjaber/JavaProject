@@ -17,6 +17,7 @@ import com.project.adventure.services.DestinationService;
 import com.project.adventure.services.HotelService;
 import com.project.adventure.services.RestaurantService;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @Controller
@@ -35,24 +36,48 @@ public class AdminController {
 	ActivityService activityService;
 	
 	@GetMapping("/admin/destination")
-	public String viewDestinationPage(@ModelAttribute("destination") Destination destination) {
+	public String viewDestinationPage(@ModelAttribute("destination") Destination destination, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
+			return "redirect:/login";
+			}
+		else if((Long) session.getAttribute("userId") != 1){
+			return "redirect:/";
+		}
 		return "destinationPage.jsp";
 	}
 	
 	@GetMapping("/admin/hotel")
-	public String viewHotelPage(@ModelAttribute("hotel") Hotel hotel, Model model) {
+	public String viewHotelPage(@ModelAttribute("hotel") Hotel hotel, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
+			return "redirect:/login";
+			}
+		else if((Long) session.getAttribute("userId") != 1){
+			return "redirect:/";
+		}
 		model.addAttribute("destinations", destinationService.allDestinations());
 		return "hotelPage.jsp";
 	}
 	
 	@GetMapping("/admin/restaurant")
-	public String viewRestaurantPage(@ModelAttribute("restaurant") Restaurant restaurant, Model model) {
+	public String viewRestaurantPage(@ModelAttribute("restaurant") Restaurant restaurant, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
+			return "redirect:/login";
+			}
+		else if((Long) session.getAttribute("userId") != 1){
+			return "redirect:/";
+		}
 		model.addAttribute("destinations", destinationService.allDestinations());
 		return "restaurantPage.jsp";
 	}
 
 	@GetMapping("/admin/activity")
-	public String viewActivityPage(@ModelAttribute("activity") Activity activity, Model model) {
+	public String viewActivityPage(@ModelAttribute("activity") Activity activity, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
+			return "redirect:/login";
+			}
+		else if((Long) session.getAttribute("userId") != 1){
+			return "redirect:/";
+		}
 		model.addAttribute("destinations", destinationService.allDestinations());
 		return "activityPage.jsp";
 	}

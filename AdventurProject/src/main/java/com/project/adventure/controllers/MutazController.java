@@ -63,22 +63,18 @@ public class MutazController {
 	@GetMapping("/admin/dashboard")
 	public String dashboard(HttpSession session, Model model) {
 
-//		if (session.getAttribute("loginId") == null) {
-//			return "redirect:/login";
-//		}
-//		Long id = (Long) session.getAttribute("loginId");
-//		User user = userService.findUser(id);
-//		model.addAttribute("email", user.getEmail());
-//		model.addAttribute("userName", user.getUsername());
-
+	if (session.getAttribute("userId") == null) {
+		return "redirect:/login";
+		}
+	else if((Long) session.getAttribute("userId") != 1){
+		return "redirect:/";
+	}
 		List<Destination> destinations = destinationService.allDestinations();
-//		for (Destination destination : destinations) {
-//			System.out.println(destination.getId());
-//		}
 
 		model.addAttribute("destinations", destinations);
 
 		return "dashboard.jsp";
+	
 		
 }
 	@GetMapping("/destinations/{id}/delete")
