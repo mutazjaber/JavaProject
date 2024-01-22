@@ -20,19 +20,41 @@
 <title>Adventure Home Page</title>
 <link rel='stylesheet' href='/css/home.css' type='text/css' media='all' />
 <style>
-        body {
-            background-color: #f8f9fa; 
-        }
+body {
+	background-color: #f8f9fa;
+}
 
-        .fancy-heading {
-            font-family: 'Pacifico', cursive; 
-            font-size: 2.5rem; 
-            color: #007bff; 
-            text-align: center; 
-            margin-top: 50px; 
-             margin-bottom: 100px; 
-        }
-    </style>
+.fancy-heading {
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5rem;
+	color: #007bff;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+.table-container {
+	margin-top: 50px; /* Add top margin for spacing */
+}
+
+.table th, .table td {
+	font-family: 'Poppins', sans-serif;
+	/* Use a good font (adjust as needed) */
+}
+
+.table th {
+	background-color: #007bff; /* Set a custom header background color */
+	color: #fff; /* Set text color for header cells */
+}
+
+.table tbody tr:hover {
+	background-color: #e9ecef; /* Set background color on hover */
+}
+
+.button-container {
+	text-align: center;
+}
+</style>
 
 
 </head>
@@ -40,14 +62,14 @@
 <body>
 	<!-- Navbar -->
 	<nav
-		class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5 bg-body rounded"
+		class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5  rounded"
 		style="background-color: #e3f2fd;">
 		<div class="container-fluid">
 
 			<a class="navbar-brand " href="/plan"> <img
 				src="https://media.discordapp.net/attachments/1197447314848100362/1197467387360989254/adventurLogo.jpg?ex=65bb5f69&is=65a8ea69&hm=37dd6bb12ee3faf35ce8058f47d3bbe1a1fb3b15b77a53188f04d7b8c393bf20&=&format=webp&width=1062&height=662"
 				alt="" width="60" height="35" class="d-inline-block align-text-top">
-				
+				Adventure Planer
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarLight"
@@ -70,7 +92,7 @@
 										d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
                                 </svg> Home
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="#"> <svg
+						<li class="nav-item"><a class="nav-link" href="/plan"> <svg
 									xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 									fill="currentColor" class="bi bi-person-raised-hand"
 									viewBox="0 0 16 16">
@@ -80,8 +102,8 @@
 										d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                 </svg> Services
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="#"> <svg
-									xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						<li class="nav-item"><a class="nav-link" href="/destinations">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 									fill="currentColor" class="bi bi-pin-map-fill"
 									viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -118,9 +140,16 @@
 			</div>
 
 			<ul class="navbar-nav">
-				<li class="nav-link"><a class="btn btn-fancy" href="/logout">Log
-						Out</a></li>
-						<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
+				<li class="nav-link"><a class="btn btn-fancy" href="/login">Sign
+						In <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+							fill="currentColor" class="bi bi-box-arrow-in-right"
+							viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+								d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
+            <path fill-rule="evenodd"
+								d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+          </svg>
+				</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -128,109 +157,42 @@
 
 
 
+	<div class="container table-container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Destination Name</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
 
+				<c:forEach var="destination" items="${destinations}">
+					<tr>
+						<td>${destination.id}</td>
+						<td><a href="/destinations/${destination.id}"
+							style="color: #007bff;">${destination.destinationName}</a></td>
+						<td><a class="btn btn-danger"
+							href="/destinations/${destination.id}/delete">Delete</a></td>
+					</tr>
+				</c:forEach>
 
-
-	<!-- Content Section -->
-	<div class="container mt-5">
-	<h1 class="fancy-heading">Adventure Destinations
-	</h1>
-	
-		<div class="row">
-			<c:forEach var="destination" items="${destinations}">
-				<div class="col-md-4 mb-4">
-
-					<div class="card h-100 card-hover">
-						<img src="${destination.image}" class="card-img-top"
-							alt="Card Image">
-						<div class="card-body">
-							<h5 class="card-title">${destination.destinationName}</h5>
-							<p class="card-text">${destination.description}</p>
-							<a class="btn btn-fancy" href="/destinations/${destination.id}/view">
-								View More</a>
-						</div>
-					</div>
-
-				</div>
-			</c:forEach>
-
-
+			</tbody>
+		</table>
+		<div>
+			<div class="button-container">
+  <a class="btn btn-primary" href="/admin/destination">Create Destination</a>
+  <a class="btn btn-primary" href="/admin/hotel">Create Hotel</a>
+  <a class="btn btn-primary" href="/admin/restaurant">Create Restaurant </a>
+  <a class="btn btn-primary" href="/admin/activity">Create Activity</a>
+</div>
 		</div>
 	</div>
 
 
-	<!-- https://static.tacdn.com/img2/tc/hero/hotels_hero_2023-c1.png -->
-	<div class="container mt-5">
-		<hr class="featurette-divider">
 
-		<div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
-			<div class="col-md-7">
-				<h2 class="featurette-heading">
-					Top Hotels <span class="text-muted"> - World </span>
-				</h2>
-				<p class="card-text">We award Travelers Choice Best of the Best
-					to hotels with a high volume of above-and-beyond reviews and
-					opinions from our community over a 12-month period. Each winner has
-					passed our rigorous trust and safety standards. Fewer than 1% of
-					Tripadvisors 8 million listings are awarded Best of the Best,
-					signifying the highest level of excellence in hospitality.
-			</div>
-			<div class="col-md-5 ">
-				<img class="featurette-image img-fluid mx-auto"
-					src="https://static.tacdn.com/img2/tc/hero/hotels_hero_2023-c1.png"
-					data-holder-rendered="true">
-			</div>
-		</div>
 
-		<hr class="featurette-divider">
-
-		<div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
-			<div class="col-md-7 order-md-2">
-				<h2 class="featurette-heading">
-					Fine Dining <span class="text-muted">- World</span>
-				</h2>
-				<p class="card-text">We award Travelers Choice Best of the Best
-					to restaurants with a high volume of above-and-beyond reviews and
-					opinions from our community over a 12-month period. Each winner has
-					passed our rigorous trust and safety standards. Fewer than 1% of
-					Tripadvisor’s 8 million listings are awarded Best of the Best,
-					signifying the highest level of excellence in travel.</p>
-			</div>
-			<div class="col-md-5 order-md-1">
-				<img class="featurette-image img-fluid mx-auto"
-					data-src="holder.js/500x500/auto" alt="500x500"
-					src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					data-holder-rendered="true">
-				<!-- style="width: 500px; height: 500px; -->
-			</div>
-		</div>
-
-		<hr class="featurette-divider">
-
-		<div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
-			<div class="col-md-7">
-				<h2 class="featurette-heading">
-					Top things to do <span class="text-muted">and attractions</span>
-				</h2>
-				<p class="card-text">Explore the best things to do around the
-					world on Tripadvisor to get recommendations and read reviews from
-					those who have been there before. From family-friendly activities
-					and adventure excursions to city tours, museums and iconic
-					attractions, discover amazing experiences near and far to start
-					planning your next trip.</p>
-			</div>
-			<div class="col-md-5">
-				<img class="featurette-image img-fluid mx-auto"
-					src="https://www.bontravelindia.com/wp-content/uploads/2021/12/Best-Adventure-Sports-Activities-in-India.jpg">
-			</div>
-		</div>
-
-		<hr class="featurette-divider">
-
-		<!-- /END THE FEATURETTES -->
-
-	</div>
-	<!-- /.container -->
 
 
 	<!-- Footer Section -->

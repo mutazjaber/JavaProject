@@ -146,7 +146,7 @@
 						<div class="card-body">
 							<h5 class="card-title">${destination.destinationName}</h5>
 							<p class="card-text">${destination.description}</p>
-							<a class="btn btn-fancy" href="/destinations/${destination.id}/view">
+							<a class="btn btn-fancy" href="/destinations/${destination.id}">
 								View More</a>
 						</div>
 					</div>
