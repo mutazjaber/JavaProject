@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,6 +27,7 @@ import com.project.adventure.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+import jakarta.websocket.server.PathParam;
 
 @Controller
 public class HomeController {
@@ -56,8 +58,8 @@ public class HomeController {
 		model.addAttribute("newUser", new User());
         return "register.jsp";
     }  
-	@RequestMapping("/plan")
-    public String planPage(HttpSession session,Model model) {
+	@RequestMapping("/plan/{id}")
+    public String planPage(@PathVariable("id") Long destinationId , HttpSession session,Model model) {
 		if (session.getAttribute("userId") == null) {
 			// User is not logged in, so redirect them to the login and registration page
 			return "redirect:/";
@@ -71,6 +73,8 @@ public class HomeController {
 			model.addAttribute("rests", rests);
 			List<Activity> activities = actService.allActivities();
 			model.addAttribute("activities", activities);
+			model.addAttribute("destination", destService.findDestination(destinationId));
+			
 			return "plan.jsp";
 		}
 		
@@ -97,7 +101,7 @@ public class HomeController {
 		 else {
 			 session.setAttribute("userId", user.getId());
 	       	 session.setAttribute("userName", user.getUsername());
-			 return "redirect:/plan";
+			 return "redirect:/";
 		 }
 		
 		
@@ -117,7 +121,7 @@ public class HomeController {
 	    
 	        session.setAttribute("userId", user.getId());
 	      	session.setAttribute("userName", user.getUsername());
-	        return "redirect:/plan";
+	        return "redirect:/";
 	    }
 	
 	 @PostMapping("/plan")

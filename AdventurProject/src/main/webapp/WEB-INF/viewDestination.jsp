@@ -209,7 +209,7 @@
 	        	</div>
     		</div>
     		<div class="d-flex justify-content-center">
-    			<a href="/plan" class="btn btn-primary card-hover w-25">Build A Plan!</a>	
+    			<a href="/plan/${destination.id}" class="btn btn-primary card-hover w-25">Build A Plan in ${destination.destinationName} !</a>	
     		</div>
     			
     	</div>
