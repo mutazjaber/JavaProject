@@ -45,7 +45,11 @@ public class HomeController {
 	private ActivityService actService;
 	
 	@RequestMapping("/")
-    public String homePage() {
+    public String homePage(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		if(userId != null) {
+			model.addAttribute("thisUser", userService.findUser(userId));
+		}
         return "home.jsp";
     }  
 	@RequestMapping("/login")
@@ -62,7 +66,7 @@ public class HomeController {
     public String planPage(@PathVariable("id") Long destinationId , HttpSession session,Model model) {
 		if (session.getAttribute("userId") == null) {
 			// User is not logged in, so redirect them to the login and registration page
-			return "redirect:/";
+			return "redirect:/login";
 		} else {
 			model.addAttribute("newPlan", new Plan());
 			List<Destination> dest = destService.allDestinations();
@@ -80,7 +84,13 @@ public class HomeController {
 		
     }  
 	@RequestMapping("/userPlans")
-    public String userPlanPage() {
+    public String userPlanPage(HttpSession session, Model model) {
+		if (session.getAttribute("userId") == null) {
+			// User is not logged in, so redirect them to the login and registration page
+			return "redirect:/login";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		model.addAttribute("thisUser", userService.findUser(userId));
         return "userPlans.jsp";
     }  
 	@RequestMapping("/about")
@@ -96,7 +106,7 @@ public class HomeController {
 		User user = userService.register(newUser, result);
 		if(result.hasErrors()) {
             model.addAttribute("newLogin", new LoginUser());
-            return "index.jsp";
+            return "register.jsp";
         }
 		 else {
 			 session.setAttribute("userId", user.getId());

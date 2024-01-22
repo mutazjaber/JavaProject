@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 .FormContainers{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 .FormContainer{
