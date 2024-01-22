@@ -100,27 +100,19 @@
     <div class="FormContainers">
         
         <div class="w-50 mt-4" >
-             <h1>Create a plan </h1>
+             <h1>Create a plan in ${destination.destinationName} !</h1>
+             
             <form:form action="/plan" method="post" modelAttribute="newPlan">
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-4 col-md-8 col-sm-12  ">
                     <label for="" class="col-lg-4">Plan Name: </label>
                     <form:input class="form-control" type="text" path="planName" name="planName" id="planName"/>
                 </div>
-                <div class="d-flex justify-content-between align-items-center col-lg-7 mt-3 col-md-8 col-sm-6" >
-                    <label for="" class="col-lg-4">Destination: </label>
-                    <form:select class="form-select" path="destination" name="" id="">
-                    
-                        <c:forEach var="dest" items="${dests}">
-				        	<form:option value=""><c:out value="${dest.destinationName}"></c:out></form:option>
-				    	</c:forEach>
-                        
-                    </form:select>
-                </div>
+               
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">Activity: </label>
                     <form:select class="form-select" path="activity" name="" id="">
                        
-                         <c:forEach var="activity" items="${activities}">
+                         <c:forEach var="activity" items="${destination.activities}">
 				        	<form:option value=""><c:out value="${activity.activityName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
@@ -128,7 +120,7 @@
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">Restaurant: </label>
                     <form:select class="form-select" path="restaurant" name="" id="">
-                         <c:forEach var="rest" items="${rests}">
+                         <c:forEach var="rest" items="${destination.restaurants}">
 				        	<form:option value=""><c:out value="${rest.restaurantName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
@@ -136,7 +128,7 @@
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">Hotel: </label>
                     <form:select class="form-select"  path="hotel" name="" id="">
-                        <c:forEach var="hotel" items="${hotels}">
+                        <c:forEach var="hotel" items="${destination.hotels}">
 				        	<form:option value=""><c:out value="${hotel.hotelName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
