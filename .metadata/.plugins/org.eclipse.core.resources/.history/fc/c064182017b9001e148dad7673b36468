@@ -1,0 +1,21 @@
+package com.project.adventure.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class MutazController {
+	@RequestMapping("/destinations")
+    public String loginPage() {
+        return "allDestinations.jsp";
+    } 
+	@GetMapping("/logout")
+	public String logOut(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+
+}
