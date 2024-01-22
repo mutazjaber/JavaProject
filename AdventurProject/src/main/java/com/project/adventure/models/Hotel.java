@@ -35,6 +35,7 @@ public class Hotel {
 	
 	@NotEmpty(message="Hotel image is required!")
 	@Size(min=3, message="Hotel image must be at least 3 characters!")
+	@Column(columnDefinition="TEXT")
 	private String image;
 	
 	@NotNull(message="Price is required!")

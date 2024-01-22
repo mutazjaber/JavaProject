@@ -33,6 +33,7 @@ public class Destination {
 	
 	@NotEmpty(message="Destination name is required!")
 	@Size(min=3, message="Destination image must be at least 3 characters!")
+	@Column(columnDefinition="TEXT")
 	private String image;
 	
 	@NotEmpty(message="Destination description is required!")

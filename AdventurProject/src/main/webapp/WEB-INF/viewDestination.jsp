@@ -4,27 +4,71 @@
 <!-- form:form -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
-<%@ page isErrorPage="true" %>        
+<%@ page isErrorPage="true" %>            
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>New Destination</title>
+		<title><c:out value="${destination.destinationName}" /></title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@650&display=swap" rel="stylesheet">
 		<link rel='stylesheet' href='/css/home.css' type='text/css' media='all' />
 		<link rel='stylesheet' href='/css/styles.css' type='text/css' media='all' />
+		<style>
+			.view-image {
+			  border-radius: 8px;
+			}
+			/* Container styles */
+		    .image-container {
+		      position: relative;
+		      width: 98%; /* Set a width for the container */
+		      margin: 0 auto;
+		      height: 50%;
+		    }
+		
+		    /* Image styles */
+		    .image-container img {
+		      width: 100%; /* Make the image fill the container */
+		      height: auto; /* Maintain aspect ratio */
+		      display: block; /* Remove extra spacing below the image */
+		      height: 50%;
+		    }
+		
+		    /* Text overlay styles */
+		    .image-text {
+		      position: absolute;
+		      top: 80%; /* Center the text vertically */
+		      left: 50%; /* Center the text horizontally */
+		      transform: translate(-50%, -50%); /* Center the text precisely */
+		      color: #fff; /* Text color */
+		      text-align: center;
+		      font-size: 18px;
+		      font-weight: bold;
+		      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a subtle text shadow */
+		    }
+		    .name-text {
+		      position: absolute;
+		      top: 10%; /* Center the text vertically */
+		      left: 50%; /* Center the text horizontally */
+		      transform: translate(-50%, -50%); /* Center the text precisely */
+		      color: #fff; /* Text color */
+		      text-align: center;
+		      font-size: 18px;
+		      font-weight: bold;
+		      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a subtle text shadow */
+		    }
+		</style>
 	</head>
 	<body>
-	<!-- Navbar -->
+		 <!-- Navbar -->
     <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5 bg-body rounded" style="background-color: #e3f2fd;">
         <div class="container-fluid">
 
             <a class="navbar-brand " href="#">
                 <img src="https://media.discordapp.net/attachments/1197447314848100362/1197467387360989254/adventurLogo.jpg?ex=65bb5f69&is=65a8ea69&hm=37dd6bb12ee3faf35ce8058f47d3bbe1a1fb3b15b77a53188f04d7b8c393bf20&=&format=webp&width=1062&height=662"
                     alt="" width="60" height="35" class="d-inline-block align-text-top">
-                Adventur Planer
+                Adventure Planner
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLight" aria-controls="navbarLight" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -96,42 +140,83 @@
 </ul>
         </div>
     </nav>
-
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
     	
-    	<div class="container mt-5 d-flex justify-content-between">
-    		<div class="container border p-4" style="background-color: #e3f2fd;">
-			<h1>Create Destination</h1>
-	    	<form:form action="/destinations/new" method="post" modelAttribute="destination">
-				
-		        <!-- Example Input Field -->
-		        <div class="form-group mt-3">
-		            <form:label for="destinationName" path="destinationName">Destination Name:</form:label>
-		            <form:errors path="destinationName" class="text-danger"/>
-		            <form:input type="text" class="form-control" id="destinationName" path="destinationName" />
-		        </div>
-		        <div class="form-group mt-3">
-		            <form:label for="image" path="image">Destination Image:</form:label>
-		            <form:errors path="image" class="text-danger"/>
-		            <form:input type="text" class="form-control" id="image" path="image" />
-		        </div>
-				<div class="form-group mt-3">
-		            <form:label for="description" path="description">Destination Description:</form:label>
-		            <form:errors path="description" class="text-danger"/>
-		            <form:textarea class="form-control" id="description" path="description" />
-		        </div>
-		        <!-- Add more input fields as needed -->
-		
-		        <button type="submit" class="btn btn-primary mt-3">Create Destination</button>
-	    	</form:form>
-		</div>
-		
-    	<div class="container">
-    			<img class="w-100 h-100" src="https://www.riu.com/blog/wp-content/uploads/2020/09/riu-maldivas-scaled.jpg" alt="Sea Image"  />
+    	<div class="container mt-5 shadow-sm p-3 mb-5 bg-body rounded">
+    		<div class="image-container">
+    			<div class="name-text"><h1><c:out value="${destination.destinationName}" /></h1></div>
+			  <img class="view-image" src="${destination.image}" alt="Destination Image">
+			  <div class="image-text"><c:out value="${destination.description}" /></div>
+			</div>
+    		
+    		<div class="container mt-5">
+    			<h2 class="text-center">Hotels In <c:out value="${destination.destinationName}" /></h2>
+	        	<div class="row">
+	        		<c:forEach var="hotel" items="${destination.hotels}">
+	        			<div class="col-md-4 mb-4">
+			                <div class="card h-100 card-hover">
+			                    <img src="${hotel.image}" class="card-img-top" style="height:40%;" alt="Hotel Image" />
+			                    <div class="card-body">
+			                        <h5 class="card-title text-center"><c:out value="${hotel.hotelName}" /></h5>
+			                        <p class="card-text" style="text-align: justify;"><c:out value="${hotel.description}" /></p>
+			                        <p class="card-text"><strong>Price Night: </strong>$<c:out value="${hotel.price}" /></p>
+			                        <!-- a href="#" class="btn btn-fancy">Read More</a-->
+			                    </div>
+			                </div>
+		            	</div>
+	        		</c:forEach>
+		            
+	        	</div>
     		</div>	
+    		
+    		<div class="container mt-5">
+    			<h2 class="text-center">Restaurants In <c:out value="${destination.destinationName}" /></h2>
+	        	<div class="row">
+	        		<c:forEach var="restaurant" items="${destination.restaurants}">
+	        			<div class="col-md-4 mb-4">
+			                <div class="card h-100 card-hover">
+			                    <img src="${restaurant.image}" class="card-img-top" style="height:40%;" alt="Hotel Image" />
+			                    <div class="card-body">
+			                        <h5 class="card-title text-center"><c:out value="${restaurant.restaurantName}" /></h5>
+			                        <p class="card-text" style="text-align: justify;"><c:out value="${restaurant.description}" /></p>
+			                        <p class="card-text"><strong>Price Night: </strong>$<c:out value="${restaurant.price}" /></p>
+			                        <!-- a href="#" class="btn btn-fancy">Read More</a-->
+			                    </div>
+			                </div>
+		            	</div>
+	        		</c:forEach>
+		            
+	        	</div>
+    		</div>
+    		
+    		<div class="container mt-5">
+    			<h2 class="text-center">Activities In <c:out value="${destination.destinationName}" /></h2>
+	        	<div class="row">
+	        		<c:forEach var="activity" items="${destination.activities}">
+	        			<div class="col-md-4 mb-4">
+			                <div class="card h-100 card-hover">
+			                    <!-- img src="${restaurant.image}" class="card-img-top" alt="Hotel Image" /-->
+			                    <div class="card-body">
+			                        <h5 class="card-title text-center"><strong><c:out value="${activity.activityName}" /></strong></h5>
+			                        <p class="card-text" style="text-align: justify;"><c:out value="${activity.description}" /></p>
+			                        <p class="card-text"><strong>Price: </strong>$<c:out value="${activity.price}" /></p>
+			                        <!-- a href="#" class="btn btn-fancy">Read More</a-->
+			                    </div>
+			                </div>
+		            	</div>
+	        		</c:forEach>
+		            
+	        	</div>
+    		</div>
+    		<div class="d-flex justify-content-center">
+    			<a href="/plan" class="btn btn-primary card-hover w-25">Build A Plan!</a>	
+    		</div>
+    			
     	</div>
-		
- 		
-		 <!-- Footer Section -->
+    
+    <!-- ------------------------------------------------------------------------------------------------------------------- -->
+    
+    <!-- Footer Section -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container">
             <div class="row">
@@ -200,5 +285,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
 	</body>
 </html>
