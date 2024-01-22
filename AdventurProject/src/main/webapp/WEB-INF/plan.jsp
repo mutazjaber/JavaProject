@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,54 +101,65 @@
         
         <div class="w-50 mt-4" >
              <h1>Create a plan </h1>
-            <form action="userplan.html">
+            <form:form action="/plan" method="post" modelAttribute="newPlan">
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-4 col-md-8 col-sm-12  ">
                     <label for="" class="col-lg-4">Plan Name: </label>
-                    <input type="text"class="form-control " name="" id="">
+                    <form:input class="form-control" type="text" path="planName" name="planName" id="planName"/>
                 </div>
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-3 col-md-8 col-sm-6" >
                     <label for="" class="col-lg-4">Destination: </label>
-                    <select class="form-select"name="" id="">
-                        <option class="form-control"    value=""></option>
-                    </select>
+                    <form:select class="form-select" path="destination" name="" id="">
+                    
+                        <c:forEach var="dest" items="${dests}">
+				        	<form:option value=""><c:out value="${dest.destinationName}"></c:out></form:option>
+				    	</c:forEach>
+                        
+                    </form:select>
                 </div>
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">Activity: </label>
-                    <select type="text"class="form-select" name="" id="">
-                        <option value=""></option>
-                    </select>
+                    <form:select class="form-select" path="activity" name="" id="">
+                       
+                         <c:forEach var="activity" items="${activities}">
+				        	<form:option value=""><c:out value="${activity.activityName}"></c:out></form:option>
+				    	</c:forEach>
+                    </form:select>
                 </div>
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">Restaurant: </label>
-                    <select type="text" class="form-select"name="" id="">
-                        <option value=""></option>
-                    </select>
+                    <form:select class="form-select" path="restaurant" name="" id="">
+                         <c:forEach var="rest" items="${rests}">
+				        	<form:option value=""><c:out value="${rest.restaurantName}"></c:out></form:option>
+				    	</c:forEach>
+                    </form:select>
                 </div>
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">Hotel: </label>
-                    <select type="text"class="form-select"name="" id="">
-                        <option value=""></option>
-                    </select>
+                    <form:select class="form-select"  path="hotel" name="" id="">
+                        <c:forEach var="hotel" items="${hotels}">
+				        	<form:option value=""><c:out value="${hotel.hotelName}"></c:out></form:option>
+				    	</c:forEach>
+                    </form:select>
 
                 </div>
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4 ">Description: </label>
-                    <input type="text" class="form-control"name="" id="">
+                    <form:input class="form-control" path="description" type="text" name=""  id=""/>
                 </div>
                 <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">From Date: </label>
-                    <input type="date"class="form-control" name="" id="">
+                    <form:input class="form-control" type="date" path="fromDate" name="" id=""/>
                     
                 </div>
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-3 col-md-8 col-sm-6">
                     <label for="" class="col-lg-4">to Date: </label>
-                    <input type="date"  class="form-control"name="" id="">
+                    <form:input class="form-control" type="date" name="" path="toDate" id=""/>
                 </div>
                 <div class="d-flex justify-content-center align-items-center col-lg-7 mt-3 col-md-8 col-sm-6 mt-3">
-                    <button  class="btn btn-primary col-lg-9 col-sm-9 col-md-9">Submit</button>
+                    <button  class="btn btn-primary col-lg-12 col-sm-9 col-md-9">Submit</button>
                 </div>
 
-            </form>
+            </form:form>
         </div>
     </div>
 
