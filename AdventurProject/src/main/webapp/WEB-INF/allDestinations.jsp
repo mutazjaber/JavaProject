@@ -120,6 +120,7 @@
 			<ul class="navbar-nav">
 				<li class="nav-link"><a class="btn btn-fancy" href="/logout">Log
 						Out</a></li>
+						<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
 			</ul>
 		</div>
 	</nav>
