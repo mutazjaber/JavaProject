@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %> 
+    
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,42 +95,56 @@
         </div>
     </nav>
 
-    <div class="FormContainers">
-       <div class="tab-content">
-        <div  class="container mt-5">
+    <div class="ml-5">
+       <div class="tab-content d-flex justify-content-around  ">
+        <div  class="container mt-2 ">
             <h1>Register</h1>
-           <form action="">
-               <div class="d-flex  mt-3 col-md-9 col-sm-9 col-lg-9 mt-1">
-                   <input class="form-control"type="text" name="" id="" placeholder="First Name">
-                   <input class="form-control"type="text" name="" id="" placeholder="Last Name">
-
+           <form:form action="/register" method="post" modelAttribute="newUser">
+               <div class=" d-flex  mt-3 col-md-12 col-sm-12 col-lg-9 mt-1">
+                   <form:input class="form-control" type="text" name="username" path="username" id="" placeholder="First Name and Last name"/>
+                   <form:errors path="username"/>
                </div>
-               <div class="row col-md-9 col-sm-9 col-lg-9 mt-1">
+               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
                </div>
-               <div class="  col-md-9 col-sm-9 col-lg-9 mt-1">
+               <div class="  col-md-10 col-sm-12 col-lg-9 mt-1">
                    <label  class="form-label"for="">Date of Birth: </label>
                    <input class="form-control"type="Date" name="" id="" placeholder="Date of Birth">
+                   
                </div>
-               <div class=" col-md-9 col-sm-9 col-lg-9 mt-1">
-                   <input class="form-control"type="text" name="" id="" placeholder="Email">
+               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
+                   <form:input path="email" type="text"  class="form-control" id="email" name="eamil" placeholder="Email"/>
+                   <form:errors path="email"/>
                </div>
-               <div class=" col-md-9 col-sm-9 col-lg-9 mt-1">
-                   <input class="form-control"type="password" name="" id="" placeholder="Password">
+               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
+                   <form:input type="password"  id="password" name="password" path="password"  class="form-control" placeholder="Password"/>
+                   <form:errors path="password"/>
                </div>
-               <div class=" col-md-9 col-sm-9 col-lg-9 mt-1">
-                   <input type="password"class="form-control" name="" id="" placeholder="Confirm Password">
+               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
+                   <form:input class="form-control" type="password" path="confirmPassword" name="" id="" placeholder="Confirm Password"/>
+                   <form:errors path="confirmPassword"/>
                </div> 
-               <div class=" mt-3">
+               <div class="  mt-3">
                    <div class="   d-flex  ">
-                       <button class="btn btn-primary col-lg-9 col-sm-9 col-md-9">Submit </button>
+                       <button class="btn btn-primary col-lg-9 col-sm-12 col-md-10">Submit </button>
                    </div>
                </div>
                
-           </form>
+           </form:form>
+        </div>
+        <div class="row">
+         <div class="col-md-8 col-sm-5 col-lg-8 ml-5   ">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: black; text-shadow: 2px 2px #ffffff">Adventure Planer</h5>
+                        <p class="card-text">Find insider info on shows and events, hotels and casinos, food and drink options, and things to do. Let us help you plan the perfect Las Vegas adventure.</p>
+                        <a href="#" class="font-color">Read More</a>
+                    </div>
+                </div>
+            	</div>
         </div>
        </div>
-        
-        
+
     </div>
 
 

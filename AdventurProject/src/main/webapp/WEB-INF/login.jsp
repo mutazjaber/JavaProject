@@ -15,7 +15,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body class="bColor">
+<body >
     <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5 bg-body rounded" style="background-color: #e3f2fd;">
         <div class="container-fluid">
 
@@ -102,26 +102,26 @@
             	<div class=" FormContainers   ">
             	<div class="FormContainers">
             	 <div class="container " >
-            	  <h2 >Please login</h2>
+            	  <h2>Please Login</h2>
             	 <div class="FormContainers">
             	 
             	   
-		                <form action="" >
+		               <form:form action="/login" method="post" modelAttribute="newLogin">
 		                    <div class="row col-md-9 col-sm-9 col-lg-6 ">
 		                        <label for="" class="form-label">Email: </label>
-		                        <input type="text" class=" form-control " name="" id="" placeholder="Enter your Email">
+		                        <form:input class="form-control" type="text" path="email" name="email" id="email" placeholder="Enter your Email"/>
 		                    </div>
 		                    <div class="row col-md-9 col-sm-9 col-lg-6 mt-1">
 		                        <label for="" class="form-label">Password: </label>
-		                        <input type="password" class="form-control" name="" id="" placeholder="Enter your Password">
+		                        <form:input class="form-control" type="password" path="password"  name="password" id="password" placeholder="Enter your Password"/>
 		                        <div class="row mt-3 ">
-		                            </div class=" col-md-4 col-lg-2 d-flex justify-content-center ">
+		                            </div class=" col-md-4 col-lg-2 d-flex justify-content-center">
 		                                <button class="btn btn-primary">Login</button>
-		                                 <p class="mt-1">Not a member? <a href="/register">Register</a> </p>
+		                                 <p class="mt-2">Not a member? <a href="/register">Register</a> </p>
 		                            </div>
 		                        </div>
 		                     
-		                </form>
+		                </form:form>
             	 </div>
 		          
             	</div>
@@ -131,7 +131,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="color: black; text-shadow: 2px 2px #ffffff">Adventure Planer</h5>
                         <p class="card-text">Find insider info on shows and events, hotels and casinos, food and drink options, and things to do. Let us help you plan the perfect Las Vegas adventure.</p>
-                        <a href="#" class="btn btn-fancy">Read More</a>
+                        <a href="#" class="font-color">Read More</a>
                     </div>
                 </div>
             	</div>
