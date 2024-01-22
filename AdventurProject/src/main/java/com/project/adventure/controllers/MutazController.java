@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.adventure.models.Destination;
-import com.project.adventure.models.User;
 import com.project.adventure.services.DestinationService;
 import com.project.adventure.services.UserService;
 
@@ -60,4 +60,32 @@ public class MutazController {
 //		return "bookDetails.jsp";
 //	}
 
+	@GetMapping("/admin/dashboard")
+	public String dashboard(HttpSession session, Model model) {
+
+//		if (session.getAttribute("loginId") == null) {
+//			return "redirect:/login";
+//		}
+//		Long id = (Long) session.getAttribute("loginId");
+//		User user = userService.findUser(id);
+//		model.addAttribute("email", user.getEmail());
+//		model.addAttribute("userName", user.getUsername());
+
+		List<Destination> destinations = destinationService.allDestinations();
+//		for (Destination destination : destinations) {
+//			System.out.println(destination.getId());
+//		}
+
+		model.addAttribute("destinations", destinations);
+
+		return "dashboard.jsp";
+		
+}
+	@GetMapping("/destinations/{id}/delete")
+	public String delete(@PathVariable("id") Long destinationId, HttpSession session) {
+//		Long id = (Long) session.getAttribute("loginId");
+		
+		destinationService.deleteDestination(destinationId);
+		return "redirect:/admin/dashboard";
+	}
 }
