@@ -23,13 +23,13 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5 bg-body rounded" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5  rounded" style="background-color: #e3f2fd;">
         <div class="container-fluid">
 
-            <a class="navbar-brand " href="#">
+            <a class="navbar-brand " href="/plan">
                 <img src="https://media.discordapp.net/attachments/1197447314848100362/1197467387360989254/adventurLogo.jpg?ex=65bb5f69&is=65a8ea69&hm=37dd6bb12ee3faf35ce8058f47d3bbe1a1fb3b15b77a53188f04d7b8c393bf20&=&format=webp&width=1062&height=662"
                     alt="" width="60" height="35" class="d-inline-block align-text-top">
-                Adventur Planer
+                Adventure Planer
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLight" aria-controls="navbarLight" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/destinations">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
                                     <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
@@ -93,10 +93,11 @@
 
             <ul class="navbar-nav">
     <li class="nav-link">
-        <button class="btn btn-fancy" type="button" >Sign Up  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+    <a class="btn btn-fancy"  href="/login">Sign In <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
             <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-          </svg></button>
+          </svg></a>
+        
     </li>
 </ul>
         </div>
@@ -109,14 +110,15 @@
                 <div class="carousel-item active">
                     <img src="https://cdn.discordapp.com/attachments/1197447314848100362/1198279324382539786/wallpaperflare.com_wallpaper_3.jpg?ex=65be5395&is=65abde95&hm=9b739f9b0e2644049d395ff486c3014d6b1518945977eea3eb1c4e651b14a827&/800/400"
                         class="d-block w-100 img-fluid  " alt="Slide 1">
-                    <div class="carousel-caption d-none d-md-block" style="color: black; text-shadow: 2px 2px #ffffff">
-                        <button class="btn btn-fancy " type="button">Find a Destination
+                    <div class="carousel-caption d-none d-md-block" style="color: black;">
+                     <a class="btn btn-fancy" href="/destinations"> 
+                        Find a Destination
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-binoculars-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5z" />
                             </svg>
-                        </button>
+                        </a>
                         
                         <h3>Choose Your Next Destination </h3>
                         <p> With Courage !</p>
@@ -124,28 +126,31 @@
                 </div>
                 <div class="carousel-item">
                     <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100 " alt="Slide 2">
-                    <div class="carousel-caption d-none d-md-block " style="color: rgb(255, 255, 255); text-shadow: 2px 2px #000000">
-                        <button class="btn btn-fancy" type="button">Find a Destination
+                    <div class="carousel-caption d-none d-md-block " style="color: rgb(255, 255, 255); ">
+                    
+                       <a class="btn btn-fancy" href="/destinations"> 
+                        Find a Destination
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-binoculars-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5z" />
                             </svg>
-                        </button>
+                        </a>
                         <h3>Disney Winnie the Pooh   </h3>
                         <p>"There’s Always More Out There For You To Discover"</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://wallpapers.com/images/hd/free-travel-wallpaper-background-nyis8xlyhu00y5ym.webp" class="d-block w-100  " alt="Slide 3">
-                    <div class="carousel-caption d-none d-md-block " style="color: black; text-shadow: 2px 2px #ffffff">
-                        <button class="btn btn-fancy" type="button">Find a Destination
+                    <div class="carousel-caption d-none d-md-block " style="color: black;">
+                        <a class="btn btn-fancy" href="/destinations"> 
+                        Find a Destination
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-binoculars-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5z" />
                             </svg>
-                        </button>
+                        </a>
                         <h3>Travel makes you realize  </h3>
                         <p> there's always more to learn !</p>
                     </div>
