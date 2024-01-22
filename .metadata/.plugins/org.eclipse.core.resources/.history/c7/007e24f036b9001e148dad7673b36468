@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.adventure.models.Destination;
 import com.project.adventure.services.DestinationService;
@@ -16,10 +15,9 @@ public class ViewController {
 	@Autowired
 	DestinationService destinationService;
 	
-	@GetMapping("/destinations/{id}/view")
-	public String viewDesination(@PathVariable("id") Long id ,Model model) {
-		
-		
+	@GetMapping("/destinations/1/view")
+	public String viewDesination(Model model) {
+		long id = 1;
 		Destination destination = destinationService.findDestination(id);
 		model.addAttribute("destination", destination);
 		
