@@ -27,6 +27,9 @@ public class MutazController {
 	@Autowired
 	private PlanService planService;
 	
+	@Autowired
+	PlanService planService;
+	
 	@GetMapping("/logout")
 	public String logOut(HttpSession session) {
 		session.invalidate();
@@ -68,6 +71,8 @@ public class MutazController {
 		return "redirect:/";
 	}
 		List<Destination> destinations = destinationService.allDestinations();
+		
+		model.addAttribute("plans", planService.allPlans());
 
 		model.addAttribute("destinations", destinations);
 
