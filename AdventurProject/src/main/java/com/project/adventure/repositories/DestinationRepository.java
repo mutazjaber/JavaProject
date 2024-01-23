@@ -11,4 +11,6 @@ import com.project.adventure.models.Destination;
 public interface DestinationRepository extends CrudRepository<Destination, Long> {
 	
 	List<Destination> findAll();
+	List<Destination> findByDestinationNameContaining(String query);
+	Destination findByDestinationName (String name) ;
 }

@@ -1,17 +1,19 @@
 package com.project.adventure.controllers;
 
-import java.awt.print.Book;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.adventure.models.Destination;
+import com.project.adventure.models.Plan;
 import com.project.adventure.services.DestinationService;
+import com.project.adventure.services.PlanService;
 import com.project.adventure.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -22,6 +24,8 @@ public class MutazController {
 	private UserService userService;
 	@Autowired
 	private DestinationService destinationService;
+	@Autowired
+	private PlanService planService;
 	
 	@GetMapping("/logout")
 	public String logOut(HttpSession session) {
@@ -78,4 +82,20 @@ public class MutazController {
 		destinationService.deleteDestination(destinationId);
 		return "redirect:/admin/dashboard";
 	}
+	
+	
+	   @PostMapping("/search")
+	    public String search(@RequestParam(name = "query", required = false) String query, Model model) {
+	        // Implement your search logic here
+	        // For example, you can use a service method to retrieve plans based on the query
+
+	        // Replace this with your actual service method
+	         Destination searchResults = destinationService.search(query);
+
+	        // Add the search results to the model
+	        model.addAttribute("searchResults", searchResults);
+
+	        // Return the view where you want to display the search results
+	        return "redirect:/destinations/" + searchResults.getId() + "/view"  ;
+	    }
 }

@@ -73,8 +73,8 @@
                 
             </div>
             <div class="d-flex mx-auto">
-                <form class="search-bar d-flex mx-auto">
-                    <input class="form-control border border-info" type="search" placeholder="Explore (o.o) " aria-label="Search">
+                <form action="/search" class="search-bar d-flex mx-auto" method="post">
+                    <input class="form-control border border-info" name="query" type="search" placeholder="Explore (o.o) " aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
                         class="bi bi-search" viewBox="0 0 16 16">
