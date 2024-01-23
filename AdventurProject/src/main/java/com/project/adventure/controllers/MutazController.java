@@ -31,18 +31,12 @@ public class MutazController {
 	@GetMapping("/destinations")
 	public String destinations(HttpSession session, Model model) {
 
-//		if (session.getAttribute("loginId") == null) {
-//			return "redirect:/login";
-//		}
-//		Long id = (Long) session.getAttribute("loginId");
-//		User user = userService.findUser(id);
-//		model.addAttribute("email", user.getEmail());
-//		model.addAttribute("userName", user.getUsername());
+		Long userId = (Long) session.getAttribute("userId");
+		if(userId != null) {
+			model.addAttribute("thisUser", userService.findUser(userId));
+		}
 
 		List<Destination> destinations = destinationService.allDestinations();
-		for (Destination destination : destinations) {
-			System.out.println(destination.getId());
-		}
 
 		model.addAttribute("destinations", destinations);
 

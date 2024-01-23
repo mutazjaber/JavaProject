@@ -102,8 +102,8 @@
      <c:if test="${userId == 1}">  
      	<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
      </c:if>
-     <c:if test="${userId != 1}">  
-     	<li class="nav-link">Welcome, <c:out value="${thisUser.username}" /></li>
+     <c:if test="${userId > 1}">  
+     	<li class="nav-link mt-2"><strong>Welcome, <c:out value="${thisUser.username}" /></strong></li>
      </c:if>  				
         
     </li>
@@ -116,7 +116,7 @@
         <div class="w-50 mt-4" >
              <h1>Create a plan in ${destination.destinationName} !</h1>
              
-            <form:form action="/plan" method="post" modelAttribute="newPlan">
+            <form:form action="/plan/${destination.id}" method="post" modelAttribute="newPlan">
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-4 col-md-8 col-sm-12  ">
                     <label for="" class="col-lg-4">Plan Name: </label>
                     <form:input class="form-control" type="text" path="planName" name="planName" id="planName"/>
@@ -127,7 +127,7 @@
                     <form:select class="form-select" path="activity" name="" id="">
                        
                          <c:forEach var="activity" items="${destination.activities}">
-				        	<form:option value=""><c:out value="${activity.activityName}"></c:out></form:option>
+				        	<form:option value="${activity.id}"><c:out value="${activity.activityName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
                 </div>
@@ -135,7 +135,7 @@
                     <label for="" class="col-lg-4">Restaurant: </label>
                     <form:select class="form-select" path="restaurant" name="" id="">
                          <c:forEach var="rest" items="${destination.restaurants}">
-				        	<form:option value=""><c:out value="${rest.restaurantName}"></c:out></form:option>
+				        	<form:option value="${rest.id}"><c:out value="${rest.restaurantName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
                 </div>
@@ -143,7 +143,7 @@
                     <label for="" class="col-lg-4">Hotel: </label>
                     <form:select class="form-select"  path="hotel" name="" id="">
                         <c:forEach var="hotel" items="${destination.hotels}">
-				        	<form:option value=""><c:out value="${hotel.hotelName}"></c:out></form:option>
+				        	<form:option value="${hotel.id}"><c:out value="${hotel.hotelName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
 

@@ -88,7 +88,7 @@
         </div>
     </nav>
 
-    <div class="ml-5 mx-auto">
+    <div class="ml-5">
     	<h1 class=" FormContainers">Welcome to Adventure Planner</h1>
        <div class="tab-content d-flex justify-content-around">
         <div  class="container mt-2">
