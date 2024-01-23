@@ -27,6 +27,7 @@ public class MutazController {
 	@Autowired
 	private PlanService planService;
 	
+
 	@GetMapping("/logout")
 	public String logOut(HttpSession session) {
 		session.invalidate();

@@ -152,7 +152,7 @@
                             </svg>
                         </a>
                         <h3>Disney Winnie the Pooh   </h3>
-                        <p>"There’s Always More Out There For You To Discover"</p>
+                        <p>"Theres Always More Out There For You To Discover"</p>
                     </div>
                 </div>
                 <div class="carousel-item">
