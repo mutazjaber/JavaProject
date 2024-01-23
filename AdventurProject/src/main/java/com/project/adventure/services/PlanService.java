@@ -38,6 +38,7 @@ public class PlanService {
 		}
 	}
 	
+	
 	public void deletePlan(Long id) {
 		planRepo.deleteById(id);
 	}

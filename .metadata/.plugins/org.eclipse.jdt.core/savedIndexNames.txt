@@ -20,7 +20,6 @@ INDEX VERSION 1.134+C:\Users\Asus\Desktop\AXSOS\JavaProject\.metadata\.plugins\o
 2314969386.index
 125249604.index
 3114758928.index
-2738188205.index
 2085023264.index
 3857928345.index
 1305941958.index

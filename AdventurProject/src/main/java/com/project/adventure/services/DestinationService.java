@@ -37,6 +37,12 @@ public class DestinationService {
 			return null;
 		}
 	}
+	public Destination search(String query) {
+		// Implement your search logic here
+		// This is just an example, replace it with your actual search implementation
+		return destinationRepo.findByDestinationName(query);
+	}
+	
 	
 	public void deleteDestination(Long id) {
 		destinationRepo.deleteById(id);
