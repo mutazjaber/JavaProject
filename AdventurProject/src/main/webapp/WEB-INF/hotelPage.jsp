@@ -133,22 +133,22 @@
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="hotelName" path="hotelName">Hotel Name:</form:label>
-		            <form:errors path="hotelName" class="text-danger"/>
+		            <form:errors path="hotelName" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="hotelName" path="hotelName" />
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="image" path="image">Hotel Image:</form:label>
-		            <form:errors path="image" class="text-danger"/>
+		            <form:errors path="image" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="image" path="image" />
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="price" path="price">Hotel Night Price:</form:label>
-		            <form:errors path="price" class="text-danger"/>
+		            <form:errors path="price" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="price" path="price" />
 		        </div>
 				<div class="form-group mt-3">
 		            <form:label for="description" path="description">Hotel Description:</form:label>
-		            <form:errors path="description" class="text-danger"/>
+		            <form:errors path="description" class="form-control form-control-sm text-danger"/>
 		            <form:textarea class="form-control" id="description" path="description" />
 		        </div>
 		        <!-- Add more input fields as needed -->

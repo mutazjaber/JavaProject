@@ -4,7 +4,9 @@
 	url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 * {
-	font-family: 'Fira Mono', monospace;
+	/*font-family: 'Fira Mono', monospace;*/
+	/*font-family: 'Lato', sans-serif;*/
+	font-family: 'helvetica, sans-serif';
 }
 
 .btn-fancy {

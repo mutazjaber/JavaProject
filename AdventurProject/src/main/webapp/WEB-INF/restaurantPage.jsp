@@ -132,22 +132,22 @@
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="restaurantName" path="restaurantName">Restaurant Name:</form:label>
-		            <form:errors path="restaurantName" class="text-danger"/>
+		            <form:errors path="restaurantName" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="restaurantName" path="restaurantName" />
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="image" path="image">Restaurant Image:</form:label>
-		            <form:errors path="image" class="text-danger"/>
+		            <form:errors path="image" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="image" path="image" />
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="price" path="price">Restaurant Reservation Price:</form:label>
-		            <form:errors path="price" class="text-danger"/>
+		            <form:errors path="price" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="price" path="price" />
 		        </div>
 				<div class="form-group mt-3">
 		            <form:label for="description" path="description">Restaurant Description:</form:label>
-		            <form:errors path="description" class="text-danger"/>
+		            <form:errors path="description" class="form-control form-control-sm text-danger"/>
 		            <form:textarea class="form-control" id="description" path="description" />
 		        </div>
 		        <!-- Add more input fields as needed -->

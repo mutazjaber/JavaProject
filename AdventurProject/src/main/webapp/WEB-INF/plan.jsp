@@ -113,18 +113,19 @@
             <!-- build a plan form -->
     <div class="FormContainers">
         
-        <div class="w-50 mt-4" >
+        <div class="container mt-4" >
              <h1>Create a plan in ${destination.destinationName} !</h1>
-             
-            <form:form action="/plan/${destination.id}" method="post" modelAttribute="newPlan">
-                <div class="d-flex justify-content-between align-items-center col-lg-7 mt-4 col-md-8 col-sm-12  ">
-                    <label path="planName for="planName" class="col-lg-4">Plan Name: </label>
-                    <form:errors class="form-control form-control-sm" for="PlanName" path="planName" />
-                    <form:input class="form-control" type="text" path="planName" name="planName" id="planName"/>
+             <div class="row">
+             <div class="col">
+             	<form:form action="/plan/${destination.id}" method="post" modelAttribute="newPlan">
+                <div class="mt-3">
+                    <label class="form-label">Plan Name: </label>
+                    <form:errors class="form-control form-control-sm text-danger" path="planName" />
+                    <form:input class="form-control" type="text" path="planName" id="planName"/>
                 </div>
                
-                <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
-                    <label for="" class="col-lg-4">Activity: </label>
+                <div class="mt-3">
+                    <label for="" class="form-label">Activity: </label>
                     <form:select class="form-select" path="activity" name="" id="">
                        
                          <c:forEach var="activity" items="${destination.activities}">
@@ -132,16 +133,16 @@
 				    	</c:forEach>
                     </form:select>
                 </div>
-                <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
-                    <label for="" class="col-lg-4">Restaurant: </label>
+                <div class="mt-3">
+                    <label for="" class="form-label">Restaurant: </label>
                     <form:select class="form-select" path="restaurant" name="" id="">
                          <c:forEach var="rest" items="${destination.restaurants}">
 				        	<form:option value="${rest.id}"><c:out value="${rest.restaurantName}"></c:out></form:option>
 				    	</c:forEach>
                     </form:select>
                 </div>
-                <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
-                    <label for="" class="col-lg-4">Hotel: </label>
+                <div class="mt-3">
+                    <label for="" class="form-label">Hotel: </label>
                     <form:select class="form-select"  path="hotel" name="" id="">
                         <c:forEach var="hotel" items="${destination.hotels}">
 				        	<form:option value="${hotel.id}"><c:out value="${hotel.hotelName}"></c:out></form:option>
@@ -149,24 +150,33 @@
                     </form:select>
 
                 </div>
-                <div class="d-flex justify-content-between align-items-center col-lg-7 mt-3 col-md-8 col-sm-6">
-                    <label for="" class="col-lg-4 ">Description: </label>
-                    <form:input class="form-control" path="description" type="text" name=""  id=""/>
+                <div class="mt-3">
+                    <label for="" class="form-label">Description: </label>
+                    <form:errors class="form-control form-control-sm text-danger" path="description" />
+                    <form:input class="form-control" path="description" type="text"/>
                 </div>
-                <div class="d-flex justify-content-between align-items-center  col-lg-7 mt-3 col-md-8 col-sm-6">
-                    <label for="" class="col-lg-4">From Date: </label>
-                    <form:input class="form-control" type="date" path="fromDate" name="" id=""/>
+                <div class="mt-3">
+                    <label for="" class="form-label">From Date: </label>
+                    <form:errors class="form-control form-control-sm text-danger" path="fromDate" />
+                    <form:input class="form-control" type="date" path="fromDate"/>
                     
                 </div>
-                <div class="d-flex justify-content-between align-items-center col-lg-7 mt-3 col-md-8 col-sm-6">
-                    <label for="" class="col-lg-4">to Date: </label>
-                    <form:input class="form-control" type="date" name="" path="toDate" id=""/>
+                <div class="mt-3">
+                    <label for="" class="form-label">to Date: </label>
+                    <form:errors class="form-control form-control-sm text-danger" path="toDate" />
+                    <form:input class="form-control" type="date" path="toDate"/>
                 </div>
-                <div class="d-flex justify-content-center align-items-center col-lg-7 mt-3 col-md-8 col-sm-6 mt-3">
+                <div class="mt-3">
                     <button  class="btn btn-primary col-lg-12 col-sm-9 col-md-9">Submit</button>
                 </div>
 
             </form:form>
+             </div>
+             <div class="col">
+             	<img class="w-100 h-100" alt="Destination Image" src="${destination.image}">
+             </div>
+             </div>
+            
         </div>
     </div>
 

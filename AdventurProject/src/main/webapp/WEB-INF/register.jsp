@@ -95,20 +95,20 @@
             <h1>Register</h1>
            <form:form action="/register" method="post" modelAttribute="newUser">
                <div class="mt-3">
+               		<form:errors path="username" class="form-control form-control-sm text-danger"/>
                    <form:input class="form-control" type="text" name="username" path="username" id="" placeholder="First Name and Last name"/>
-                   <form:errors path="username" class="text-danger"/>
                </div>
                <div class="mt-3">
+               		<form:errors path="email" class="form-control form-control-sm text-danger"/>
                    <form:input path="email" type="text"  class="form-control" id="email" name="eamil" placeholder="Email"/>
-                   <form:errors path="email" class="text-danger"/>
                </div>
                <div class="mt-3">
+               		<form:errors path="password" class="form-control form-control-sm text-danger"/>
                    <form:input type="password"  id="password" name="password" path="password"  class="form-control" placeholder="Password"/>
-                   <form:errors path="password" class="text-danger"/>
                </div>
                <div class="mt-3">
+               		<form:errors path="confirmPassword" class="form-control form-control-sm text-danger"/>
                    <form:input class="form-control" type="password" path="confirmPassword" name="" id="" placeholder="Confirm Password"/>
-                   <form:errors path="confirmPassword" class="text-danger"/>
                </div> 
                <div class="  mt-3">
                    <div class="   d-flex  ">

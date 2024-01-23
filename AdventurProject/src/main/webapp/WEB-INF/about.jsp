@@ -260,7 +260,7 @@
 				<div class="card h-100 card-hover">
 					<div class="d-flex justify-content-center align-items-center"
 						style="height: 200px;">
-						<img src="" class="card-img-top rounded-circle"
+						<img src="https://media.discordapp.net/attachments/1197447314848100362/1199318291957686332/IMG_4519.jpg?ex=65c21b33&is=65afa633&hm=99ad66ff93b9bf3eb44feadaeede398fd6db340d80ef8fccad2d9897963ed2e8&=&format=webp&width=314&height=419" class="card-img-top rounded-circle"
 							style="width: 150px; height: 150px; object-fit: cover;"
 							alt="Card Image">
 					</div>
