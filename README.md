@@ -16,5 +16,23 @@ Also our users can book a plan or make their own customize plan with their prefe
 - **Shahrazad Masalmah**
 - **Mutaz Jaber**
 - **M-habib Snobar**
-   
-   
+
+1. **Clone the repository using CMD or Git Bash:**
+
+    ```bash
+       git clone https://github.com/mutazjaber/JavaProject.git
+    ```
+
+2. **Navigate to the project Maven:**
+
+    ```bash
+       mvn clean install
+    ```
+3. **Change MySQL userName and Password from application.properties**
+
+   ```bash
+      spring.datasource.url=jdbc:mysql://localhost:3306/adventure
+      spring.datasource.username=root
+      spring.datasource.password=root
+   ```
+ 4. **Make sure you have a adventure schema in your Mysql Workbench**
