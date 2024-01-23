@@ -121,17 +121,17 @@
 		        <!-- Example Input Field -->
 		        <div class="form-group mt-3">
 		            <form:label for="destinationName" path="destinationName">Destination Name:</form:label>
-		            <form:errors path="destinationName" class="text-danger"/>
+		            <form:errors path="destinationName" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="destinationName" path="destinationName" />
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="image" path="image">Destination Image:</form:label>
-		            <form:errors path="image" class="text-danger"/>
+		            <form:errors path="image" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="image" path="image" />
 		        </div>
 				<div class="form-group mt-3">
 		            <form:label for="description" path="description">Destination Description:</form:label>
-		            <form:errors path="description" class="text-danger"/>
+		            <form:errors path="description" class="form-control form-control-sm text-danger"/>
 		            <form:textarea class="form-control" id="description" path="description" />
 		        </div>
 		        <!-- Add more input fields as needed -->

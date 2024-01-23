@@ -131,17 +131,17 @@
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="activityName" path="activityName">Activity Name:</form:label>
-		            <form:errors path="activityName" class="text-danger"/>
+		            <form:errors path="activityName" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="activityName" path="activityName" />
 		        </div>
 		        <div class="form-group mt-3">
 		            <form:label for="price" path="price">Activity Price:</form:label>
-		            <form:errors path="price" class="text-danger"/>
+		            <form:errors path="price" class="form-control form-control-sm text-danger"/>
 		            <form:input type="text" class="form-control" id="price" path="price" />
 		        </div>
 				<div class="form-group mt-3">
 		            <form:label for="description" path="description">Activity Description:</form:label>
-		            <form:errors path="description" class="text-danger"/>
+		            <form:errors path="description" class="form-control form-control-sm text-danger"/>
 		            <form:textarea class="form-control" id="description" path="description" />
 		        </div>
 		        <!-- Add more input fields as needed -->
@@ -152,7 +152,7 @@
 		
 		
 		<div class="container">
-    			<img class="w-100 h-100" src="https://th.bing.com/th/id/OIP.gp1kEv-OWl2ndo-B8yRfgAHaE8?rs=1&pid=ImgDetMain" alt="Sea Image"  />
+    			<img class="w-100 h-100" src="https://gttp.imgix.net/197924/x/0/boracay-island-parasailing-adventure-i-with-transfer-guide.jpg" alt="Sea Image"  />
     		</div>
 		</div>
 	<!-- Footer Section -->

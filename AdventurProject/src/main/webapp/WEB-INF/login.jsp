@@ -100,12 +100,12 @@
 		               <form:form action="/login" method="post" modelAttribute="newLogin">
 		                    <div class="">
 		                        <label for="" class="form-label">Email: </label>
-		                       	<form:errors path="email" class="text-danger"/>
+		                       	<form:errors path="email" class="form-control form-control-sm text-danger"/>
 		                        <form:input class="form-control" type="text" path="email" name="email" id="email" placeholder="Enter your Email"/>
 		                    </div>
 		                    <div class="">
 		                        <label for="" class="form-label">Password: </label>
-		                        <form:errors path="password" class="text-danger"/>
+		                        <form:errors path="password" class="form-control form-control-sm text-danger"/>
 		                        <form:input class="form-control" type="password" path="password"  name="password" id="password" placeholder="Enter your Password"/>
 		                        <div class="row mt-3 ">
 		                            <div class=" d-flex-column justify-content-center">

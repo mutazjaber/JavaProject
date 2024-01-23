@@ -63,13 +63,13 @@ public class HomeController {
         return "register.jsp";
     }  
 	@RequestMapping("/plan/{id}")
-    public String planPage(@PathVariable("id") Long destinationId , HttpSession session,Model model) {
+    public String planPage(@ModelAttribute("newPlan") Plan plan, @PathVariable("id") Long destinationId , HttpSession session,Model model) {
 		Long userId = (Long) session.getAttribute("userId");
 		if (userId == null) {
 			// User is not logged in, so redirect them to the login and registration page
 			return "redirect:/login";
 		} else {
-			model.addAttribute("newPlan", new Plan());
+			//model.addAttribute("newPlan", new Plan());
 			//List<Destination> dest = destService.allDestinations();
 			//model.addAttribute("dests", dest);
 			//List<Hotel> hotel = hotelService.allHotels();
@@ -140,23 +140,14 @@ public class HomeController {
 	        return "redirect:/";
 	    }
 	
-	 @PostMapping("/plan/{id}")
-	 public String planPost(@Valid @ModelAttribute("plan") Plan plan, BindingResult result, 
+	 @PostMapping("/plan/{destinationId}")
+	 public String planPost(@Valid @ModelAttribute("newPlan") Plan plan, BindingResult result, 
 			 HttpSession session,
-				Model model, @PathVariable("id") Long id){
+				Model model, @PathVariable("destinationId") Long id){
 		 Long userId = (Long) session.getAttribute("userId");
 		 
 		 if (result.hasErrors()) {
-			 
-			 	model.addAttribute("newPlan", new Plan());
-				//List<Destination> dest = destService.allDestinations();
-				//model.addAttribute("dests", dest);
-				//List<Hotel> hotel = hotelService.allHotels();
-				//model.addAttribute("hotels", hotel);
-				//List<Restaurant> rests = restService.allRestaurants();
-				//model.addAttribute("rests", rests);
-				//List<Activity> activities = actService.allActivities();
-				//model.addAttribute("activities", activities);
+			 	//model.addAttribute("newPlan", new Plan());
 				model.addAttribute("thisUser", userService.findUser(userId));
 				model.addAttribute("destination", destService.findDestination(id));
 				return "plan.jsp";
