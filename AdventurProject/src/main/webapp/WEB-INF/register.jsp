@@ -88,45 +88,38 @@
         </div>
     </nav>
 
-    <div class="ml-5">
-    	<h1 class=" FormContainers">Welcome to Adventure Planner</h1>
-       <div class="tab-content d-flex justify-content-around">
-        <div  class="container mt-2">
+    <div class="container" style="width: 70%;">
+    	<h1 class=" text-center">Welcome to Adventure Planner</h1>
+       <div class="tab-content row mt-5">
+        <div  class="col">
             <h1>Register</h1>
            <form:form action="/register" method="post" modelAttribute="newUser">
-               <div class=" d-flex  mt-3 col-md-12 col-sm-12 col-lg-9 mt-1">
+               <div class="mt-3">
                    <form:input class="form-control" type="text" name="username" path="username" id="" placeholder="First Name and Last name"/>
-                   <form:errors path="username"/>
+                   <form:errors path="username" class="text-danger"/>
                </div>
-               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
-               </div>
-               <div class="  col-md-10 col-sm-12 col-lg-9 mt-1">
-                   <label  class="form-label"for="">Date of Birth: </label>
-                   <input class="form-control"type="Date" name="" id="" placeholder="Date of Birth">
-                   
-               </div>
-               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
+               <div class="mt-3">
                    <form:input path="email" type="text"  class="form-control" id="email" name="eamil" placeholder="Email"/>
-                   <form:errors path="email"/>
+                   <form:errors path="email" class="text-danger"/>
                </div>
-               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
+               <div class="mt-3">
                    <form:input type="password"  id="password" name="password" path="password"  class="form-control" placeholder="Password"/>
-                   <form:errors path="password"/>
+                   <form:errors path="password" class="text-danger"/>
                </div>
-               <div class=" col-md-10 col-sm-12 col-lg-9 mt-1">
+               <div class="mt-3">
                    <form:input class="form-control" type="password" path="confirmPassword" name="" id="" placeholder="Confirm Password"/>
-                   <form:errors path="confirmPassword"/>
+                   <form:errors path="confirmPassword" class="text-danger"/>
                </div> 
                <div class="  mt-3">
                    <div class="   d-flex  ">
-                       <button class="btn btn-primary col-lg-9 col-sm-12 col-md-10">Submit </button>
+                       <button class="btn btn-primary w-100">Submit </button>
                    </div>
                </div>
                
            </form:form>
         </div>
-        <div class="row">
-         <div class="col-md-8 col-sm-5 col-lg-8 ml-5   ">
+        <div class="col">
+         <div class="">
                 <div class="card h-100">
                     <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Card Image">
                     <div class="card-body">

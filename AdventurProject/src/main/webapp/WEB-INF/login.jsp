@@ -93,29 +93,32 @@
           
         <h1 class=" FormContainers">Welcome to Adventure Planner</h1>
             <!-- Login -->
-            	<div class="d-flex justify-content-around mx-auto mt-3" style="width: 60%;">
-            		<div class="container mt-2" >
+            	<div class="row mx-auto mt-5" style="width: 60%;">
+            		<div class="col" >
             	  <h2>Please Login</h2>
-            	 
             	   
 		               <form:form action="/login" method="post" modelAttribute="newLogin">
-		                    <div class="row col-md-9 col-sm-9 col-lg-6 ">
+		                    <div class="">
 		                        <label for="" class="form-label">Email: </label>
+		                       	<form:errors path="email" class="text-danger"/>
 		                        <form:input class="form-control" type="text" path="email" name="email" id="email" placeholder="Enter your Email"/>
 		                    </div>
-		                    <div class="row col-md-9 col-sm-9 col-lg-6 mt-1">
+		                    <div class="">
 		                        <label for="" class="form-label">Password: </label>
+		                        <form:errors path="password" class="text-danger"/>
 		                        <form:input class="form-control" type="password" path="password"  name="password" id="password" placeholder="Enter your Password"/>
 		                        <div class="row mt-3 ">
-		                            </div class=" col-md-4 col-lg-2 d-flex justify-content-center">
-		                                <button class="btn btn-primary">Login</button>
+		                            <div class=" d-flex-column justify-content-center">
+		                                <button class="btn btn-primary w-100">Login</button>
 		                                 <p class="mt-2">Not a member? <a href="/register">Register</a> </p>
+		                                 </div>
+		                            </div>
 		                            </div>
 		                     
 		                </form:form>
             	 </div>
 		          
-            	 <div class="col-md-6 col-sm-3 col-lg-4 mb-4 mt-4">
+            	 <div class="col">
                 <div class="card h-100">
                     <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Card Image">
                     <div class="card-body">

@@ -138,10 +138,9 @@
 
 	<!-- Content Section -->
 	<div class="container mt-5">
-	<h1 class="fancy-heading">Adventure Destinations
-	</h1>
+	<h1 class="mt-5 text-center">Adventure Destinations</h1>
 	
-		<div class="row">
+		<div class="row mt-5">
 			<c:forEach var="destination" items="${destinations}">
 				<div class="col-md-4 mb-4">
 
