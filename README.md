@@ -28,11 +28,11 @@ Also our users can book a plan or make their own customize plan with their prefe
     ```bash
        mvn clean install
     ```
-3. **Change MySQL userName and Password from application.properties**
+3. **Change MySQL userName and Password from application.properties:**
 
    ```bash
       spring.datasource.url=jdbc:mysql://localhost:3306/adventure
       spring.datasource.username=root
       spring.datasource.password=root
    ```
- 4. **Make sure you have a adventure schema in your Mysql Workbench**
+ 4. **Make sure you have a adventure schema in your Mysql Workbench:**
