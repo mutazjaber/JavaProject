@@ -24,7 +24,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5  rounded" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-xl navbar-light py-1 shadow-lg p-3 mb-5  rounded sticky-top" style="background-color: #e3f2fd;">
         <div class="container-fluid">
 
             <a class="navbar-brand " href="/">
@@ -194,7 +194,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">Paris</h5>
                         <p class="card-text" style="text-align: justify;">Paris' monument-lined boulevards, museums, classical bistros and boutiques are enhanced by a new wave of multimedia galleries, creative wine bars, design shops and tech start-ups.</p>
-                        <a href="#" class="btn btn-fancy">Read More</a>
+                        <a href="/destinations/3/view" class="btn btn-fancy">Read More</a>
                     </div>
                 </div>
             </div>
@@ -205,17 +205,17 @@
                     <div class="card-body">
                         <h5 class="card-title text-center" >London</h5>
                         <p class="card-text" style="text-align: justify;">Instantly recognizable icons like Big Ben and St. Paul's Cathedral welcome you to history-laden London, the UK's multicultural capital that's a tireless innovator of art and culture.</p>
-                        <a href="#" class="btn btn-fancy">Read More</a>
+                        <a href="/destinations/2/view" class="btn btn-fancy">Read More</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card h-100 card-hover">
-                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/2a/34/2d/28/caption.jpg" class="card-img-top" alt="Card Image" style="height:40%;">
+                    <img src="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg?impolicy=fcrop&w=800&h=533&q=medium" class="card-img-top" alt="Card Image" style="height:40%;">
                     <div class="card-body">
-                        <h5 class="card-title text-center" style="color: black; text-shadow: 2px 2px #ffffff">Las Vegas</h5>
+                        <h5 class="card-title text-center" style="color: black; text-shadow: 2px 2px #ffffff">Bangkok</h5>
                         <p class="card-text" style="text-align: justify;">Find insider info on shows and events, hotels and casinos, food and drink options, and things to do. Let us help you plan the perfect Las Vegas adventure.</p>
-                        <a href="#" class="btn btn-fancy">Read More</a>
+                        <a href="/destinations/1/view" class="btn btn-fancy">Read More</a>
                     </div>
                 </div>
             </div>
