@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page isErrorPage="true" %>    
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,8 @@
     <link rel='stylesheet' href='/css/Styles.css' type='text/css' media='all' />
 
     <title>View Plans</title>
-
+	<style>
+	</style>
     
 </head>
 
@@ -121,33 +123,34 @@
     <div>
         <!-- headers -->
         <div>
-            <h1>Hello ${thisUser.username} This is all of your Plans</h1>
+            <h1 class="text-center">Hello ${thisUser.username} This is all of your Plans</h1>
         </div>
-        <!-- containters -->
-        <div>
-            <div  class="container p-5 my-5 border d-flex">
-               <div>
-                <img src="" alt="">
-               </div>
-               <div>
-               <c:forEach var="plan" items="${thisUser.plans}">
-	               <h2><c:out value="${plan.planName}" /></h2>
-	                <p>Destination: <c:out value="${plan.destination.destinationName}" /></p>
-	                <p>Hotel: <c:out value="${plan.hotel.hotelName}" /></p>
-	                <p>Restaurant: <c:out value="${plan.restaurant.restaurantName}" /></p>
-	                <p>Activity: <c:out value="${plan.activity.activityName}" /></p>
-	                <p>The Cost: $<c:out value="${plan.hotel.price + plan.restaurant.price + plan.activity.price}" /></p>
-	                <p>From date: <c:out value="${plan.fromDate}" /> , 
-	                to date: <c:out value="${plan.toDate}" /></p>
-	                <a href="/plan/${plan.id}/delete" class="btn btn-danger">>Delete</a>
-	                <a href="/plan/${plan.id}/take" class="btn btn-primary">>Book Now</a>
-               </c:forEach>
-                
-               </div>
+		 <div class="container mt-5">
+        <div class="row">
+        <c:forEach var="plan" items="${thisUser.plans}">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 card-hover">
+                    <img src="${plan.destination.image}" 
+                        class="card-img-top" alt="Card Image" style="height:40%;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><c:out value="${plan.planName}" /></h5>
+                        <p class="card-text" style="text-align: justify;"><strong>Destination:</strong> <c:out value="${plan.destination.destinationName}" /></p>
+                        <p class="card-text" style="text-align: justify;"><strong>Hotel:</strong> <c:out value="${plan.hotel.hotelName}" /></p>
+                        <p class="card-text" style="text-align: justify;"><strong>Restaurant:</strong> <c:out value="${plan.restaurant.restaurantName}" /></p>
+                        <p class="card-text" style="text-align: justify;"><strong>Activity:</strong> <c:out value="${plan.activity.activityName}" /></p>
+                        <p class="card-text" style="text-align: justify;"><strong>The Total Cost:</strong> $<c:out value="${plan.hotel.price + plan.restaurant.price + plan.activity.price}" /></p>
+                        <p class="card-text" style="text-align: justify;"><strong>From date:</strong> <fmt:formatDate type = "date"  value = "${plan.fromDate}" /></p>
+                        <p class="card-text" style="text-align: justify;"><strong>to date:</strong> <fmt:formatDate type = "date"  value = "${plan.toDate}" /></p>
+                        <div class="d-flex justify-content-center">
+                        	<a href="/plan/${plan.id}/delete" class="btn btn-danger me-3">>Delete</a>
+	               			<a href="/plan/${plan.id}/take" class="btn btn-fancy">>Book Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-
+            </c:forEach>
+            </div>
+            </div>
     </div>
 
 

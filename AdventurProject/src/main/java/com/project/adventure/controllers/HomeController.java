@@ -174,7 +174,7 @@ public class HomeController {
 		 Long userId = (Long) session.getAttribute("userId");
 		 User currentUser = userService.findUser(userId);
 		 currentUser.getPlans().remove(plan);
-		 plan.setUser(currentUser);
+		 plan.setUser(null);
 		 planService.updatePlan(plan);
 		 userService.updateUser(currentUser);
 		 return "redirect:/userPlans";
