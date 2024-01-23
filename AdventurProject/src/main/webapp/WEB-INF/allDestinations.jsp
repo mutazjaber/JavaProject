@@ -169,7 +169,7 @@
 
 		<div class="row featurette shadow-lg p-3 mb-5 bg-body rounded">
 			<div class="col-md-7">
-				<h2 class="featurette-heading mb-3">
+				<h2 class="featurette-heading m">
 					Top Hotels <span class="text-muted"> - World </span>
 				</h2>
 				<p class="card-text">We award Travelers Choice Best of the Best
