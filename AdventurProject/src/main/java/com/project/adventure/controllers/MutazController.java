@@ -1,17 +1,16 @@
 package com.project.adventure.controllers;
 
-import java.awt.print.Book;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.adventure.models.Destination;
 import com.project.adventure.services.DestinationService;
+import com.project.adventure.services.PlanService;
 import com.project.adventure.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -22,6 +21,9 @@ public class MutazController {
 	private UserService userService;
 	@Autowired
 	private DestinationService destinationService;
+	
+	@Autowired
+	PlanService planService;
 	
 	@GetMapping("/logout")
 	public String logOut(HttpSession session) {
@@ -64,6 +66,8 @@ public class MutazController {
 		return "redirect:/";
 	}
 		List<Destination> destinations = destinationService.allDestinations();
+		
+		model.addAttribute("plans", planService.allPlans());
 
 		model.addAttribute("destinations", destinations);
 

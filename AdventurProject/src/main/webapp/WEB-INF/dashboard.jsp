@@ -44,8 +44,8 @@ body {
 }
 
 .table th {
-	background-color: #007bff; /* Set a custom header background color */
-	color: #fff; /* Set text color for header cells */
+	background-color: #e3f2fd;; /* Set a custom header background color */
+	color: #000; /* Set text color for header cells */
 }
 
 .table tbody tr:hover {
@@ -162,9 +162,9 @@ body {
 		<table class="table">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Destination Name</th>
-					<th>Actions</th>
+					<th style="color: black;">ID</th>
+					<th style="color: black;">Destination Name</th>
+					<th style="color: black;">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -172,8 +172,7 @@ body {
 				<c:forEach var="destination" items="${destinations}">
 					<tr>
 						<td>${destination.id}</td>
-						<td><a href="/destinations/${destination.id}/view"
-							style="color: #007bff;">${destination.destinationName}</a></td>
+						<td><a href="/destinations/${destination.id}/view">${destination.destinationName}</a></td>
 						<td><a class="btn btn-danger"
 							href="/destinations/${destination.id}/delete">Delete</a></td>
 					</tr>
@@ -181,12 +180,40 @@ body {
 
 			</tbody>
 		</table>
+		
+		<table class="table mt-5">
+			<thead>
+				<tr>
+					<th style="color: black;">ID</th>
+					<th style="color: black;">Plan Name</th>
+					<th style="color: black;">Plan Total Cost</th>
+					<th style="color: black;">Booked</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<c:forEach var="plan" items="${plans}">
+					<tr>
+						<td>${plan.id}</td>
+						<td><c:out value="${plan.planName}" /></td>
+						<td>$<c:out value="${plan.activity.price + plan.restaurant.price + plan.hotel.price}" /></td>
+						<c:if test="${plan.user == null}">
+							<td>Booked</td>
+						</c:if>
+						<c:if test="${plan.user != null}">
+							<td>Still</td>
+						</c:if>
+					</tr>
+				</c:forEach>
+
+			</tbody>
+		</table>
 		<div>
 			<div class="button-container mt-5">
-  <a class="btn btn-primary" href="/admin/destination">Create Destination</a>
-  <a class="btn btn-primary" href="/admin/hotel">Create Hotel</a>
-  <a class="btn btn-primary" href="/admin/restaurant">Create Restaurant </a>
-  <a class="btn btn-primary" href="/admin/activity">Create Activity</a>
+  <a class="btn" style="background-color: #e3f2fd; color:black;" href="/admin/destination">Create Destination</a>
+  <a class="btn" style="background-color: #e3f2fd; color:black;" href="/admin/hotel">Create Hotel</a>
+  <a class="btn" style="background-color: #e3f2fd; color:black;" href="/admin/restaurant">Create Restaurant </a>
+  <a class="btn" style="background-color: #e3f2fd; color:black;" href="/admin/activity">Create Activity</a>
 </div>
 		</div>
 	</div>
