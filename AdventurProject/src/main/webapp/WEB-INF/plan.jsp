@@ -118,7 +118,8 @@
              
             <form:form action="/plan/${destination.id}" method="post" modelAttribute="newPlan">
                 <div class="d-flex justify-content-between align-items-center col-lg-7 mt-4 col-md-8 col-sm-12  ">
-                    <label for="" class="col-lg-4">Plan Name: </label>
+                    <label path="planName for="planName" class="col-lg-4">Plan Name: </label>
+                    <form:errors class="form-control form-control-sm" for="PlanName" path="planName" />
                     <form:input class="form-control" type="text" path="planName" name="planName" id="planName"/>
                 </div>
                
