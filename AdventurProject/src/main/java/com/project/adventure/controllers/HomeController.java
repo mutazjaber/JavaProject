@@ -64,19 +64,21 @@ public class HomeController {
     }  
 	@RequestMapping("/plan/{id}")
     public String planPage(@PathVariable("id") Long destinationId , HttpSession session,Model model) {
-		if (session.getAttribute("userId") == null) {
+		Long userId = (Long) session.getAttribute("userId");
+		if (userId == null) {
 			// User is not logged in, so redirect them to the login and registration page
 			return "redirect:/login";
 		} else {
 			model.addAttribute("newPlan", new Plan());
-			List<Destination> dest = destService.allDestinations();
-			model.addAttribute("dests", dest);
-			List<Hotel> hotel = hotelService.allHotels();
-			model.addAttribute("hotels", hotel);
-			List<Restaurant> rests = restService.allRestaurants();
-			model.addAttribute("rests", rests);
-			List<Activity> activities = actService.allActivities();
-			model.addAttribute("activities", activities);
+			//List<Destination> dest = destService.allDestinations();
+			//model.addAttribute("dests", dest);
+			//List<Hotel> hotel = hotelService.allHotels();
+			//model.addAttribute("hotels", hotel);
+			//List<Restaurant> rests = restService.allRestaurants();
+			//model.addAttribute("rests", rests);
+			//List<Activity> activities = actService.allActivities();
+			//model.addAttribute("activities", activities);
+			model.addAttribute("thisUser", userService.findUser(userId));
 			model.addAttribute("destination", destService.findDestination(destinationId));
 			
 			return "plan.jsp";
@@ -94,7 +96,11 @@ public class HomeController {
         return "userPlans.jsp";
     }  
 	@RequestMapping("/about")
-    public String aboutUs() {
+    public String aboutUs(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		if(userId != null) {
+			model.addAttribute("thisUser", userService.findUser(userId));
+		}
         return "about.jsp";
     } 
 	
@@ -134,9 +140,9 @@ public class HomeController {
 	        return "redirect:/";
 	    }
 	
-	 @PostMapping("/plan")
+	 @PostMapping("/plan/{id}")
 	 public String planPost(@Valid @ModelAttribute("plan") Plan plan, BindingResult result, HttpSession session,
-				Model model){
+				Model model, @PathVariable("id") Long id){
 		 if (result.hasErrors()) {
 				return "redirect:/plan";
 			}
@@ -144,12 +150,36 @@ public class HomeController {
 			 Long userId = (Long) session.getAttribute("userId");
 			 User currentUser = userService.findUser(userId);
 			 plan.setUser(currentUser);
+			 plan.setDestination(destService.findDestination(id));
 			 planService.createPlan(plan);
 			  return "redirect:/userPlans";
 		 }
 		 
 		
 	 }
+	 
+	 @RequestMapping("/plan/{planId}/delete")
+	 public String deletePlan(@PathVariable("planId") Long id, HttpSession session) {
+		 Plan plan = planService.findPlan(id);
+		 plan.setUser(null);
+		 plan.setDestination(null);
+		 planService.deletePlan(id);
+		 return "redirect:/userPlans";
+	 }
+	 
+	 
+	 @RequestMapping("/plan/{planId}/take")
+	 public String BookPlan(@PathVariable("planId") Long id, HttpSession session) {
+		 Plan plan = planService.findPlan(id);
+		 Long userId = (Long) session.getAttribute("userId");
+		 User currentUser = userService.findUser(userId);
+		 currentUser.getPlans().remove(plan);
+		 plan.setUser(currentUser);
+		 planService.updatePlan(plan);
+		 userService.updateUser(currentUser);
+		 return "redirect:/userPlans";
+	 }
+	 
 	 
 	 
 	 

@@ -93,11 +93,9 @@
           
         <h1 class=" FormContainers">Welcome to Adventure Planner</h1>
             <!-- Login -->
-            	<div class=" FormContainers   ">
-            	<div class="FormContainers">
-            	 <div class="container " >
+            	<div class="d-flex justify-content-around mx-auto mt-3" style="width: 60%;">
+            		<div class="container mt-2" >
             	  <h2>Please Login</h2>
-            	 <div class="FormContainers">
             	 
             	   
 		               <form:form action="/login" method="post" modelAttribute="newLogin">
@@ -113,12 +111,10 @@
 		                                <button class="btn btn-primary">Login</button>
 		                                 <p class="mt-2">Not a member? <a href="/register">Register</a> </p>
 		                            </div>
-		                        </div>
 		                     
 		                </form:form>
             	 </div>
 		          
-            	</div>
             	 <div class="col-md-6 col-sm-3 col-lg-4 mb-4 mt-4">
                 <div class="card h-100">
                     <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Card Image">
@@ -129,11 +125,12 @@
                     </div>
                 </div>
             	</div>
+            	</div>
+            	 
 		           
             </div>
                
             </div>
-        </div>
    
    <!-- Footer Section -->
     <footer class="bg-light text-center text-lg-start mt-5">

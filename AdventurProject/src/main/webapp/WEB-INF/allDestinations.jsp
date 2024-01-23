@@ -17,7 +17,7 @@
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<title>Adventure Home Page</title>
+<title>Destinations</title>
 <link rel='stylesheet' href='/css/home.css' type='text/css' media='all' />
 <link rel='stylesheet' href='/css/styles.css' type='text/css' media='all' />
 <style>
@@ -125,8 +125,8 @@
      <c:if test="${userId == 1}">  
      	<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
      </c:if>
-     <c:if test="${userId != 1}">  
-     	<li class="nav-link">Welcome, <c:out value="${thisUser.username}" /></li>
+     <c:if test="${userId > 1}">  
+     	<li class="nav-link mt-2"><strong>Welcome, <c:out value="${thisUser.username}" /></strong></li>
      </c:if>  				
         
     </li>

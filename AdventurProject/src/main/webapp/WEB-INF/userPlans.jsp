@@ -109,8 +109,8 @@
      <c:if test="${userId == 1}">  
      	<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
      </c:if>
-     <c:if test="${userId != 1}">  
-     	<li class="nav-link">Welcome, <c:out value="${thisUser.username}" /></li>
+     <c:if test="${userId > 1}">  
+     	<li class="nav-link mt-2"><strong>Welcome, <c:out value="${thisUser.username}" /></strong></li>
      </c:if>  				
         
     </li>
@@ -121,7 +121,7 @@
     <div>
         <!-- headers -->
         <div>
-            <h1>Hello {username} This is all of your Plans</h1>
+            <h1>Hello ${thisUser.username} This is all of your Plans</h1>
         </div>
         <!-- containters -->
         <div>
@@ -130,12 +130,19 @@
                 <img src="" alt="">
                </div>
                <div>
-                <h2>Plane name</h2>
-                <p>Destination: name</p>
-                <p>Hotel: name</p>
-                <p>Activity: Activities</p>
-                <p>From date: , to date:</p>
-                <button class="btn btn-primary"> Show</button>
+               <c:forEach var="plan" items="${thisUser.plans}">
+	               <h2><c:out value="${plan.planName}" /></h2>
+	                <p>Destination: <c:out value="${plan.destination.destinationName}" /></p>
+	                <p>Hotel: <c:out value="${plan.hotel.hotelName}" /></p>
+	                <p>Restaurant: <c:out value="${plan.restaurant.restaurantName}" /></p>
+	                <p>Activity: <c:out value="${plan.activity.activityName}" /></p>
+	                <p>The Cost: $<c:out value="${plan.hotel.price + plan.restaurant.price + plan.activity.price}" /></p>
+	                <p>From date: <c:out value="${plan.fromDate}" /> , 
+	                to date: <c:out value="${plan.toDate}" /></p>
+	                <a href="/plan/${plan.id}/delete" class="btn btn-danger">>Delete</a>
+	                <a href="/plan/${plan.id}/take" class="btn btn-primary">>Book Now</a>
+               </c:forEach>
+                
                </div>
             </div>
         </div>

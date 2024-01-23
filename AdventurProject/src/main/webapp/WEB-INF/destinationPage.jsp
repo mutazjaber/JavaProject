@@ -104,7 +104,7 @@
      	<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
      </c:if>
      <c:if test="${userId > 1}">  
-     	<li class="nav-link">Welcome, <c:out value="${thisUser.username}" /></li>
+     	<li class="nav-link mt-2"><strong>Welcome, <c:out value="${thisUser.username}" /></strong></li>
      </c:if>  				
         
     </li>

@@ -140,8 +140,8 @@
      <c:if test="${userId == 1}">  
      	<li class="nav-link"><a class="btn btn-fancy" href="/admin/dashboard">Admin</a></li>
      </c:if>
-     <c:if test="${userId != 1}">  
-     	<li class="nav-link">Welcome, <c:out value="${thisUser.username}" /></li>
+     <c:if test="${userId > 1}">  
+     	<li class="nav-link mt-2"><strong>Welcome, <c:out value="${thisUser.username}" /></strong></li>
      </c:if>  				
         
     </li>
@@ -219,7 +219,7 @@
 					<div class="d-flex justify-content-center align-items-center"
 						style="height: 200px;">
 						<img
-							src="2962475956712285_n.jpg?stp=dst-jpg_p240x240&_nc_cat=111&ccb=1-7&_nc_sid=5740b7&_nc_ohc=rECea1fyhW4AX-FfrP2&_nc_ht=scontent.fjrs29-1.fna&oh=00_AfArP3c4RnsjzEkYZ8PE7iOmJQ6t5R7HFtNNp6OG74Wxiw&oe=65B2F59C"
+							src="https://media.discordapp.net/attachments/1197447314848100362/1199243458158788648/IMG-20231220-WA0006.jpg?ex=65c1d581&is=65af6081&hm=0f325f193ff45b2d5a0d6b1124640bdb46ffe2645e769d1f40e24d99c17f5ec6&=&format=webp&width=235&height=419"
 							class="card-img-top rounded-circle"
 							style="width: 150px; height: 150px; object-fit: cover;"
 							alt="Card Image">
