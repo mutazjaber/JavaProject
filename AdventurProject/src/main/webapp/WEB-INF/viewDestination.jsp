@@ -121,7 +121,7 @@
 			</div>
     		
     		<div class="container mt-5">
-    			<h2 class="text-center">Hotels In <c:out value="${destination.destinationName}" /></h2>
+    			<h2 class="text-center mb-5">Hotels In <c:out value="${destination.destinationName}" /></h2>
 	        	<div class="row">
 	        		<c:forEach var="hotel" items="${destination.hotels}">
 	        			<div class="col-md-4 mb-4">
@@ -141,7 +141,7 @@
     		</div>	
     		
     		<div class="container mt-5">
-    			<h2 class="text-center">Restaurants In <c:out value="${destination.destinationName}" /></h2>
+    			<h2 class="text-center mb-5">Restaurants In <c:out value="${destination.destinationName}" /></h2>
 	        	<div class="row">
 	        		<c:forEach var="restaurant" items="${destination.restaurants}">
 	        			<div class="col-md-4 mb-4">
@@ -161,7 +161,7 @@
     		</div>
     		
     		<div class="container mt-5">
-    			<h2 class="text-center">Activities In <c:out value="${destination.destinationName}" /></h2>
+    			<h2 class="text-center mb-5">Activities In <c:out value="${destination.destinationName}" /></h2>
 	        	<div class="row">
 	        		<c:forEach var="activity" items="${destination.activities}">
 	        			<div class="col-md-4 mb-4">
