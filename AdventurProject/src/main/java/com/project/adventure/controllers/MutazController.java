@@ -94,6 +94,11 @@ public class MutazController {
 
 	        // Replace this with your actual service method
 	         Destination searchResults = destinationService.search(query);
+	         
+	         if(searchResults == null) {
+	        	 
+	        	 return "redirect:/destinations";
+	         }
 
 	        // Add the search results to the model
 	        model.addAttribute("searchResults", searchResults);
